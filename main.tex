@@ -60,13 +60,13 @@
 %
 \section{Introduction}
 
-The Clausius-Clapeyron relation describes the potential for a warmer atmosphere to hold more water vapor \citep{emanuel1994}. This principle is the basis for the positive water vapor feedback, first quantified in early climate models \citep{manabe1967}, and for an increase in the latent heat released during convection as the climate warms. Consistent with these principles, the total latent heat released from convection increases monotonically with surface temperature (Fig.~\ref{fig:fig-1}a).
+The Clausius-Clapeyron relation describes the potential for a warmer atmosphere to hold more water vapor \citep{emanuel1994}. This principle is the basis for the positive water vapor feedback \citep{held2000a} and various scaling theories in response to warming including extreme precipitation \citep{oGorman2015} and CAPE \citep{romps2016}. 
 
 In the tropics, convection couples the surface with the free troposphere. Although processes like convective entrainment influence the details of this coupling \citep{miyawaki2020}, moist adiabatic adjustment serves as a useful first-order approximation \citep{held1993}. The top-heavy warming profile predicted by moist adiabatic adjustment (Fig.~\ref{fig:fig-1}b) is a robust feature in climate models and observations, despite historical challenges in observational records \citep{vallis2015, santer2005}.
 
-This warming profile is important because it increases atmospheric static stability, which influences convection \citep{neelin1987}. This structure also defines the tropical lapse rate feedback, a key negative feedback for global climate sensitivity \citep{hansen1984}. Given the monotonic increase in total latent heating (Fig.~\ref{fig:fig-1}a), one might expect moist adiabatic warming to also be monotonic with surface temperature at all heights. However, it is a non-monotonic function of surface temperature at a fixed height (Fig.~\ref{fig:fig-1}c). This non-monotonicity is independent of the vertical coordinate (Fig.~\ref{fig:fig-a1}). While \citet{levine2016} showed this non-monotonicity and its influence on zonal stationary circulations, a physical explanation for the non-monotonicity in moist adiabatic warming currently does not exist in the literature.
+This warming profile is important because it increases atmospheric static stability, which influences convection \citep{neelin1987}. This structure also defines the tropical lapse rate feedback, a key negative feedback for global climate sensitivity \citep{hansen1984}. The lapse rate feedback partially cancels the water vapor feedback and scales in tandem because amplified warming in the upper troposphere is a consequence of enhanced latent heat release \citep{held2012}. In a moist adiabatic atmosphere that is saturated at the surface, total latent heat release scales with surface humidity for deep convection that reaches the tropopause where $q_\text{tropopause}\ll q_\text{surface}$ because the tropopause temperature is approximately invariant with warming \citep{seeley2019}. Given the monotonic increase in surface humidity (Fig.~\ref{fig:fig-1}a), one might expect moist adiabatic warming to also be monotonic with surface temperature at all heights. However, it is a non-monotonic function of surface temperature at a fixed pressure (Fig.~\ref{fig:fig-1}c, see Appendix~A for details on how the moist adiabat is calculated). This non-monotonicity arises in height coordinates (Fig.~\ref{fig:fig-a1}) and when the latent heat of fusion is included (see Appendix~B and Fig.~\ref{fig:fig-b1}). While \citet{levine2016} showed this non-monotonicity and its influence on zonal stationary circulations, a physical explanation for the non-monotonicity in moist adiabatic warming currently does not exist in the literature.
 
-This raises the question: What physical mechanism drives this non-monotonic warming? This paper presents a thermodynamic explanation for the origins of non-monotonicity in moist adiabatic warming and its cascading effects on other convective properties. Section 2 develops the theory of non-monotonic warming. Section 3 explores the implications of this non-monotonicity for the dynamics of moist convection. Section 4 provides a summary and discussion.
+This raises the question: What physical mechanism drives this non-monotonic warming? This paper presents a thermodynamic explanation for the origins of non-monotonicity in moist adiabatic warming and its cascading effects on buoyancy and vertical velocity. Section 2 develops the theory of non-monotonic warming. Section 3 explores the implications of this non-monotonicity for buoyancy and vertical velocity. Section 4 provides a summary and discussion.
 
 \begin{figure}[htbp]
  \centering
@@ -76,74 +76,117 @@ This raises the question: What physical mechanism drives this non-monotonic warm
 \end{figure}
 
 \section{Theory of Non-Monotonic Warming}
-The non-monotonic relationship between upper-tropospheric warming and surface temperature (Fig.~\ref{fig:fig-1}) can be explained by analyzing the sensitivity of the moist adiabatic lapse rate, $\Gamma_m$, to changes in surface temperature, $T_s$. To illustrate this, we start by defining the temperature profile, $T(z)$, in terms of its surface value, $T(0)$, and the lapse rate, $\Gamma(z)=-dT/dz$:
+We start by defining the moist adiabatic temperature profile in pressure coordinates $T(p)$ in terms of the moist adiabatic lapse rate $\Gamma_m = dT/dp$:
 \begin{equation}
-T(z)=T(0)-\int_0^z \Gamma(z')dz' \label{eq:temp_profile}
+T(p) = T_s + \int_{p_s}^{p} \Gamma_m \, dp' \label{eq:temp_profile_pressure}
 \end{equation}
-We apply Eq.~(\ref{eq:temp_profile}) to a base state with surface temperature $T_s$ and a perturbed state with surface temperature $T_s + \Delta T_s$. The warming at any height, $\Delta T(z)$, is the difference between these two profiles, $\Delta T(z) = T_{\text{pert}}(z) - T_{\text{base}}(z)$, which yields:
+where $T_s$ is surface temperature. The difference between a perturbed and baseline state ($\Delta$) then follows as
 \begin{equation}
-\Delta T(z)=\Delta T_s-\int_0^z\Delta \Gamma(z')dz' \label{eq:delta_t_simple}
+\Delta T(p) = \Delta T_s + \int_{p_s}^{p} \Delta\Gamma_m \, dp' \label{eq:delta_t_pressure}
 \end{equation}
-where $\Delta \Gamma = \Gamma_{\text{pert}} - \Gamma_{\text{base}}$. For a small perturbation, the change in the lapse rate, $\Delta\Gamma$, can be approximated using a first-order Taylor expansion: $\Delta\Gamma\approx \frac{d\Gamma_m}{dT_s} \Delta T_s$. Substituting this into Eq.~(\ref{eq:delta_t_simple}) gives:
+For a small perturbation, $\Delta \Gamma_m$ can be approximated using a first-order Taylor expansion: $\Delta\Gamma_m \approx \frac{d\Gamma_m}{dT_s}\Delta T_s$. Substituting this into Eq.~(\ref{eq:delta_t_pressure}) gives:
 \begin{equation}
-\Delta T(z)\approx\Delta T_s-\left(\int_0^z\frac{d\Gamma_m}{dT_s}dz'\right)\Delta T_s \label{eq:delta_t_taylor}
+\Delta T(p) \approx \Delta T_s + \left(\int_{p_s}^{p} \frac{d\Gamma_m}{dT_s}dp'\right)\Delta T_s \label{eq:delta_t_taylor_pressure}
 \end{equation}
-This establishes that the vertical structure of the warming anomaly (i.e., its deviation from the uniform surface warming) is controlled by the vertical integral of $d\Gamma_m/dT_s$, the sensitivity of the lapse rate to the surface temperature. Therefore, understanding the physical mechanisms that determine this sensitivity is the key to explaining the non-monotonicity of moist adiabatic warming.
+Thus the non-monotonicity in moist adiabatic warming is encoded into $d\Gamma_m/dT_s$, the sensitivity of the moist adiabatic lapse rate to surface temperature. Indeed, $d\Gamma_m/dT_s$ is non-monotonic with respect to temperature (dashed line shows the local minima of $d\Gamma_m/dT_s$ in Fig.~\ref{fig:fig-2}a). Note that $d\Gamma_m/dT_s$ is mostly negative in the troposphere (Fig.~\ref{fig:fig-2}b). This is consistent with amplified warming aloft because the integral in Eq.~(\ref{eq:delta_t_pressure} is from high to low pressure, which introduces a negative sign.
 
-We begin by deriving an expression for the moist adiabatic lapse rate from the first law of thermodynamics for a saturated, ascending air parcel, which is equivalent to the conservation of Moist Static Energy (MSE):
+$\Gamma_m$ is a function of local state variables $\Gamma_m(T, p)$. Thus to make progress in understanding $d\Gamma_m/dT_s$, we must rewrite $d\Gamma_m/dT_s$ in terms of derivatives with respect to the local state variables $(T, p)$. To do this we first use the chain rule: 
 \begin{equation}
-c_p dT+gdz+L_v dq_s=0 \label{eq:mse_conservation}
+\frac{d\Gamma_m}{dT_s} = \left(\frac{\partial\Gamma_m}{\partial T}\right)_p \cdot \frac{dT}{dT_s} + \left(\frac{\partial\Gamma_m}{\partial p}\right)_T \cdot \frac{dp}{dT_s} \label{eq:chain_rule_start}
 \end{equation}
-Here, $c_p$ is the specific heat capacity of dry air, $g$ is the acceleration due to gravity, $z$ is height, $L_v$ is the latent heat of vaporization, and $q_s$ is the saturation specific humidity. To find the moist adiabatic lapse rate, $\Gamma_m=-dT/dz$, we divide Eq.~(\ref{eq:mse_conservation}) by $dz$:
+The second term $\frac{dp}{dT_s}=0$ because pressure is the vertical coordinate and is an independent variable. Recognizing that by definition $\Gamma_m = \frac{dT}{dp}$,
 \begin{equation}
-c_p \frac{dT}{dz}+g+L_v\frac{dq_s}{dz}=0 \label{eq:mse_dz}
+    \frac{d}{dp}\left(\frac{dT}{dT_s}\right) = \left(\frac{\partial\Gamma_m}{\partial T}\right)_p \cdot \frac{dT}{dT_s} 
+    \label{eq:ode}
 \end{equation}
-Substituting $dT/dz=-\Gamma_m$ and solving for $\Gamma_m$ yields:
+This is an ordinary differential equation for $\frac{dT}{dT_s}$ as a function of pressure. The solution with the boundary condition $\frac{dT}{dT_s}(p_s) = 1$, is:
 \begin{equation}
-\Gamma_m=\frac{g}{c_p}+\frac{L_v}{c_p}\frac{dq_s}{dz}=\Gamma_d+\frac{L_v}{c_p}\frac{dq_s}{dz} \label{eq:gamma_m}
+    \frac{dT}{dT_s} = \exp\left(\int_{p_s}^{p} \left(\frac{\partial\Gamma_m}{\partial T}\right)_p dp'\right)
+    \label{eq:ode-solution}
 \end{equation}
-where $\Gamma_d$ is the dry adiabatic lapse rate. For simplicity, and following common theoretical practice, $\Gamma_d$, $L_v$, and $c_p$ are assumed to be constant. Then the sensitivity of the lapse rate to surface temperature is controlled entirely by the sensitivity of the vertical moisture gradient:
+Substituting Eq.~(\ref{eq:ode-solution}) back into Eq.~(\ref{eq:chain_rule_start}) gives:
 \begin{equation}
-\frac{d\Gamma_m}{dT_s}=\frac{L_v}{c_p}\frac{d}{dT_s}\left(\frac{dq_s}{dz}\right) \label{eq:gamma_sensitivity}
+\frac{d\Gamma_m}{dT_s} = \left(\frac{\partial\Gamma_m}{\partial T}\right)_p \cdot \exp\left(\int_{p_s}^{p} \left(\frac{\partial\Gamma_m}{\partial T}\right)_{p'} dp'\right) \label{eq:total_sensitivity}
 \end{equation}
-We can decompose the moisture gradient, $dq_s/dz$, into two components using the chain rule, as $q_s$ is a function of temperature $T$ and pressure $p$:
-\begin{equation}
-\frac{dq_s}{dz}=\frac{\partial q_s}{\partial T}\frac{dT}{dz}+\frac{\partial q_s}{\partial p}\frac{dp}{dz} \label{eq:dqs_dz_chain}
-\end{equation}
-Substituting the definitions of the moist lapse rate ($dT/dz=-\Gamma_m$) and hydrostatic balance ($dp/dz=-\rho g$, where $\rho$ is the density of air) allows the moisture gradient to be expressed as the sum of a Cooling Term and a Pressure Term:
-\begin{equation}
-\frac{dq_s}{dz} = \underbrace{-\Gamma_m\frac{\partial q_s}{\partial T}}_{\text{Cooling Term}} + \underbrace{\left(-\rho g\frac{\partial q_s}{\partial p}\right)}_{\text{Pressure Term}} \label{eq:dqs_dz_terms}
-\end{equation}
-The Cooling Term represents the decrease in water vapor due to the parcel cooling as it rises and expands. The Pressure Term represents the increase in water vapor due to the decrease in ambient pressure as the parcel rises. Substituting this decomposition back into Eq.~(\ref{eq:gamma_sensitivity}) allows us to decompose the total sensitivity, $d\Gamma_m/dT_s$, into the sum of contributions from these two terms. They have opposing effects on the total sensitivity (Fig.~\ref{fig:fig-2}). The Cooling Term acts to decrease $\Gamma_m$ with warming (Fig.~\ref{fig:fig-2}b), while the Pressure Term acts to increase $\Gamma_m$ with warming (Fig.~\ref{fig:fig-2}c).
+where $(\partial\Gamma_m/\partial T)_p$ is the moist adiabatic lapse rate sensitivity to local temperature $T$ at pressure level $p$. The integral describes how a surface temperature perturbation influences $\Gamma_m$ through the sum of all $\Gamma_m$ changes that occur below $p$.
 
-The opposing effects of these two terms on the lapse rate translate into competing contributions to the overall warming profile. Integrating the Cooling Term's sensitivity reveals a warming contribution that amplifies monotonically with increasing $T_s$ at all heights (Fig.~\ref{fig:fig-3}a, \ref{fig:fig-3}b). In contrast, integrating the Pressure Term's sensitivity reveals a contribution that acts to cool the atmosphere relative to the surface, and this cooling effect becomes stronger as $T_s$ increases (Fig.~\ref{fig:fig-3}c, \ref{fig:fig-3}d). Physically, this occurs because a decrease in ambient pressure favors the vapor phase over condensed phases, which means the Pressure Term contributes to a decrease in latent heat release from condensation compared to a hypothetical alternative where temperature were to decrease without a corresponding decrease in pressure. The total warming anomaly, $\Delta T_{\text{anomaly}}(z)=\Delta T(z)-\Delta T_s$, is the sum of these two opposing effects:
+The non-monotonicity can arise from either 1) $(\partial\Gamma_m/\partial T)_p$ being non-monotonic and the integral acting to amplify it or 2) $(\partial\Gamma_m/\partial T)_p$ being monotonic but sign changes in $(\partial\Gamma_m/\partial T)_p$ leads to the integral being non-monotonic. Numerical solutions show that $(\partial\Gamma_m/\partial T)_p$ is non-monotonic (dash-dot line shows the local minima of $d\Gamma_m/dT$ in Fig.~\ref{fig:fig-2}c), which is further amplified by the integral term (Fig.~\ref{fig:fig-2}d).
+
+Why is $(\partial\Gamma_m/\partial T)_p$ non-monotonic with $T$? To understand this we solve for $\Gamma_m$ from the first law of thermodynamics for adiabatic ascent with latent heating assuming the parcel is saturated:
+\begin{equation}
+c_{p} dT - \alpha dp + L_v dq_s = 0 \label{eq:mse_pressure}
+\end{equation}
+where $c_{p}$ is the specific heat capacity of air at constant pressure, $\alpha$ is specific volume, $L_v$ is the latent heat of vaporization, and $q_s$ is the saturation specific humidity. We assume 1) $c_p \approx c_{pd}$, neglecting the role of water of all phases on the specific heat capacity and 2) $\alpha \approx \alpha_d = R_d T/p$, neglecting the virtual effect of vapor on density. 
+
+Use the chain rule to expand $dq_s$:
+\begin{equation}
+dq_s = \left(\frac{\partial q_s}{\partial T}\right)_p dT + \left(\frac{\partial q_s}{\partial p}\right)_T dp \label{eq:dqs_expansion}
+\end{equation}
+
+Substituting Eq.~(\ref{eq:dqs_expansion}) into Eq.~(\ref{eq:mse_pressure}) and rearranging gives
+\begin{equation}
+\left(c_{pd} + L_v\left(\frac{\partial q_s}{\partial T}\right)_p \right)dT = \left(\alpha_d - L_v\left(\frac{\partial q_s}{\partial p}\right)_T\right)dp \label{eq:rearranged}
+\end{equation}
+We can derive closed-form expressions for the $q_s$ derivatives using the Clausius-Clapeyron relation and Dalton's Law. These $q_s$ derivatives describe the role of phase equilibrium shifts in $q_s$ with $T$ and $p$ on the effective heat capacity and specific volume of the air parcel, respectively:
 \begin{align}
-\Delta T_{\text{cool}}(z) &\approx - \Delta T_s \int_0^z \frac{d}{dT_s}\left(\frac{L_v}{c_p}\left(-\Gamma_m \frac{\partial q_s}{\partial T}\right)\right) dz' \label{eq:delta_t_cool} \\
-\Delta T_{\text{pres}}(z) &\approx - \Delta T_s \int_0^z \frac{d}{dT_s}\left(\frac{L_v}{c_p}\left(-\rho g \frac{\partial q_s}{\partial p}\right)\right) dz' \label{eq:delta_t_pres} \\
-\Delta T_{\text{anomaly}}(z) &= \Delta T_{\text{cool}}(z) + \Delta T_{\text{pres}}(z) \label{eq:delta_t_anomaly}
+c_L &\equiv L_v\left(\frac{\partial q_s}{\partial T}\right)_p \approx \frac{L_v^2 q_s}{R_v T^2}
+\label{eq:c_L} \\
+\alpha_L &\equiv -L_v\left(\frac{\partial q_s}{\partial p}\right)_T \approx \frac{L_v q_s}{p}
+\label{eq:alpha_L}
 \end{align}
-The non-monotonic behavior of moist adiabatic warming is thus a consequence of the competition between these two opposing effects.
+where the approximation arises from assuming saturation vapor pressure $e_s \ll p$.
 
-The reason for the eventual dominance of the Pressure Term's temperature sensitivity lies in its temperature scaling relative to the Cooling Term. We can approximate the partial derivatives of specific humidity using the Clausius-Clapeyron relation and the ideal gas law:
+$c_L$ can be thought of as a latent heat capacity, representing the enhanced thermal inertia due to the fact that latent heating buffers some of the cooling from expansion. Thus $c_L$ acts to increase the heat capacity of the air parcel such that it has an effective heat capacity $c_{pd} + c_L$.
+
+$\alpha_L$ can be thought of as a latent specific volume, representing the enhanced expansion of air with ascent due to the fact that lower pressure shifts the phase equilibrium of water to favor the vapor phase over liquid. Thus $\alpha_L$ acts to increase the volume of air such that it has an effective specific volume $\alpha_d + \alpha_L$.
+
+Now solving for the moist adiabatic lapse rate $\Gamma_m = dT/dp$:
 \begin{align}
-\frac{\partial q_s}{\partial T}&\approx q_s\frac{L_v}{R_v T^2} \label{eq:dqs_dt_approx} \\
-\frac{\partial q_s}{\partial p}&\approx -\frac{q_s}{p} \label{eq:dqs_dp_approx}
+\Gamma_m = \frac{dT}{dp} &= \frac{\alpha_d +\alpha_L}{c_{pd} + c_L} \label{eq:gamma_m_ratio} \\
+&= \Gamma_d \cdot \frac{1+\frac{\alpha_L}{\alpha_d}}{1+\frac{c_L}{c_{pd}}} \label{eq:gamma_m_factored}
 \end{align}
-where $R_v$ is the gas constant for water vapor. Substituting these approximations into Eq.~(\ref{eq:dqs_dz_terms}) gives:
+where $\Gamma_d = \alpha_d / c_{pd}$ is the dry adiabatic lapse rate in pressure coordinates and the two non-dimensional terms represent the fractional increase in effective heat capacity and specific volume due to phase equilibrium changes:
+\begin{align}
+\tilde{c} &= \frac{c_L}{c_{pd}} = \frac{L_v^2 q_s}{c_{pd} R_v T^2} \label{eq:c_ratio} \\
+\tilde{\alpha} &= \frac{\alpha_L}{\alpha_d} = \frac{L_v q_s}{R_d T} = \frac{R_v c_{pd}T}{R_dL_v}\tilde{c} = k\tilde{c} \label{eq:alpha_ratio}
+\end{align}
+Substituting Eq.~(\ref{eq:c_ratio}) and Eq.~(\ref{eq:alpha_ratio}) into Eq.~(\ref{eq:gamma_m_factored}) gives:
 \begin{equation}
-\frac{dq_s}{dz} \approx-\Gamma_m\left(q_s\frac{L_v}{R_v T^2}\right)-\rho g\left(-\frac{q_s}{p}\right) \approx -q_s\left(\Gamma_m\frac{L_v}{R_v T^2}\right)+q_s\left(\frac{\rho g}{p}\right) \label{eq:dqs_dz_approx}
+\Gamma_m = \Gamma_d \cdot \frac{1 + k\tilde{c}}{1 + \tilde{c}} \label{eq:gamma_m_tilde}
 \end{equation}
-Using the ideal gas law for moist air, $p\approx\rho R_d T_v$ (where $T_v$ is the virtual temperature), the pressure-related term in Eq.~(\ref{eq:dqs_dz_approx}) can be rewritten:
-\begin{equation}
-\frac{dq_s}{dz} \approx -q_s \left(\frac{\Gamma_m L_v}{R_v T^2}\right) + q_s \left(\frac{g}{R_d T_v}\right) \label{eq:dqs_dz_prefactors}
-\end{equation}
-Both terms scale with the saturation specific humidity, $q_s$, which increases exponentially with temperature. However, they are also multiplied by prefactors with different temperature dependencies.
 
-The Cooling Term is modulated by a prefactor that scales as $1/T^2$. This dampens the exponential increase in the Cooling Term with surface warming. $\Gamma_m$ in the numerator of the Cooling Term prefactor further modulates the exponential increase because $\Gamma_m$ decreases with warming. The Pressure Term is modulated by a prefactor that scales as $1/T_v$. Thus the Pressure Term prefactor is a weaker function of temperature than the Cooling Term prefactor (Fig.~\ref{fig:fig-4}). Consequently, as $T_s$ rises, the rapid decay of the Cooling Term's prefactor mutes the effect of increasing $q_s$ relative to the Pressure Term. This allows the Pressure Term's influence on the lapse rate to eventually catch up to that of the Cooling Term. The differing sensitivities of these two terms to temperature cause the warming to first strengthen and then weaken with $T_s$.
+For typical values in Earth's atmosphere ($R_v=461$ J kg$^{-1}$ K$^{-1}$, $R_d=287$ J kg$^{-1}$ K$^{-1}$, $c_{pd}=1005$ J kg$^{-1}$ K$^{-1}$, $L_v=2.5\times10^6$ J kg$^{-1}$, and $T \in [200, 320]$ K), the factor $k=\frac{R_v c_{pd}T}{R_dL_v}\in [0.13, 0.21]$. Thus $k$ is a weak function of temperature and is a quasi-constant of order $10^{-1}$. In contrast, $\tilde{c}$ scales exponentially with temperature (through $q_s$) and varies from $\tilde{c}(200\text{ K})\sim 10^{-4}$ to $\tilde{c}(320\text{ K})\sim 10^{1}$. Thus the temperature sensitivity of $\Gamma_m$ is controlled by $\tilde{c}$. Because $\Gamma_m$ is bounded between $\Gamma_d$ (dry limit, $\tilde{c} \to 0$) and $k\Gamma_d$ (moist limit, $\tilde{c} \to \infty$), the magnitude of $\partial\Gamma_m/\partial T$ must peak at some intermediate $\tilde{c}$ else $\Gamma_m$ would be unbounded.
+
+Where does the magnitude of $\partial\Gamma_m/\partial T$ reach its peak value? To solve this we use the quotient rule on Eq.~(\ref{eq:gamma_m_ratio}):
+\begin{equation}
+\frac{\partial\Gamma_m}{\partial T} = \underbrace{\frac{1}{c_{pd} + c_L}\frac{\partial(\alpha_d + \alpha_L)}{\partial T}}_{\text{latent volume sensitivity}} + \underbrace{\left(-\frac{\alpha_d + \alpha_L}{(c_{pd} + c_L)^2}\frac{\partial c_L}{\partial T}\right)}_{\text{latent heat capacity sensitivity}} \label{eq:decomposition}
+\end{equation}
+The latent volume sensitivity varies monotonically with $T_s$ (Fig.~\ref{fig:fig-3}a, c). The latent heat capacity sensitivity varies non-monotonically with $T_s$ (Fig.~\ref{fig:fig-3}b, d). Thus we further decompose the latent heat capacity sensitivity to probe its origin:
+\begin{equation}
+-\frac{\alpha_d + \alpha_L}{(c_{pd} + c_L)^2}\frac{\partial c_L}{\partial T} = -\frac{1}{p} \cdot \left(1 + \tilde{\alpha}\right) \cdot \frac{R_d}{c_{pd}}\frac{\partial\log{c_L}}{\partial \log{T}} \cdot f_d \cdot f_L \label{eq:term_b_intermediate}
+\end{equation}
+where
+\begin{equation}
+f_d \equiv c_{d}/(c_{pd} + c_L) \label{eq:f_d}
+\end{equation}
+\begin{equation}
+f_L \equiv c_{L}/(c_{pd} + c_L) \label{eq:f_L}
+\end{equation}
+and $f_d + f_L = 1$. $f_d$ and $f_L$ represent the dry and latent fractions of effective heat capacity. 
+
+Eq.~(\ref{eq:term_b_intermediate}) shows the latent heat capacity sensitivity is a product of four terms that vary monotonically with $T$. $\tilde{\alpha}=L_v q_s / (\alpha_d p)$ scales exponentially with $T$ through $q_s$ (red line in Fig.~\ref{fig:fig-4}a). The fractional change in latent heat capacity to a fractional change in temperature $\partial\log{c_L}/\partial\log{T} = L_v / (R_v T) - 2$ so it weakly decreases with $T$ (blue line in Fig.~\ref{fig:fig-4}a). The product of these two terms is weakly non-monotonic in $T$ with a local minimum where $\tilde{\alpha} \approx R_vT/L_v$ (white line in Fig.~\ref{fig:fig-4}b). At low $T$, $\tilde{\alpha}$ is small so the product is dominated by the decrease in $\partial\log{c_L}/\partial\log{T}$. At high $T$, $\tilde{\alpha}$ is large so the product is dominated by the exponential increase in $\tilde{\alpha}$ . However, the non-monotonicity of these two terms are not the source of the peak in the magnitude of $\partial\Gamma_m/\partial T$, which requires a local maximum, not a minimum.
+
+The dry fraction of effective heat capacity $f_d=c_{pd}/(c_{pd}+c_L)$ logistically decreases with $T$ because $c_{pd}$ is a constant while latent heat capacity $c_L$ increases exponentially with $T$ through $q_s$ (blue line in Fig.~\ref{fig:fig-4}c). The latent fraction of effective heat capacity $f_L = c_L / (c_{pd}+c_L)$ logistically increases with $T$ (red line in Fig.~\ref{fig:fig-4}c). The product $f_d\cdot f_L$ is maximized when $f_d=f_L$, or $c_L = c_{pd}$ (black line in Fig.~\ref{fig:fig-4}d).
+
+What is the physical intuition behind the peak at $c_L = c_{pd}$? Recall that $c_L$ quantifies the enhancement of effective heat capacity due to latent heat of condensation offsetting adiabatic cooling. The $q_s$ derivative in $c_L$ requires two ingredients: 1) cooling from expansion and 2) water vapor. $f_d$ and $f_L$ represent the fractional availability of the two ingredients. At low $T$, condensation is limited by the availability of water vapor (red line in Fig.~\ref{fig:fig-4}c). At high $T$ condensation is limited by adiabatic cooling (blue line in Fig.~\ref{fig:fig-4}c). The peak in latent heat capacity sensitivity corresponds to where the availability of cooling and vapor are equally limiting (black line in Fig.~\ref{fig:fig-4}c). Thus the non-monotonicity in $\partial\Gamma_m/\partial T$ and moist adiabatic warming arises from the competition between the two limiting factors of condensation.
+
+How well does the condition $c_L = c_{pd}$ capture the actual peak in $\partial\Gamma_m/\partial T$? The theory slightly overpredicts the $T_s$ where the magnitude of $\partial\Gamma_m/\partial T$ peaks (compare solid and dash-dot lines in Fig.~\ref{fig:fig-5}). This error is due to the weak non-monotonicity in the product $(1+\tilde{\alpha})R_d/c_{pd}\partial\log(c_L)/\partial\log(T)$ which decreases with pressure (Fig.~\ref{fig:fig-4}b). The error maximizes at the surface where the theory predicts a peak $T_s$ that is 1.6 K warmer than the true peak $T_s$. 
+
+The error in $T_s$ predicted by the theory and the true peak of $\Gamma_m / d T_s$ grows with height because the integral term in Eq.~(\ref{eq:total_sensitivity}) amplifies the error in $\partial\Gamma_m / \partial T$ at each level below. This error maximizes at 420 hPa where $c_L = c_{pd}$ predicts a peak $T_s$ that is 2.0 K warmer than the true peak $T_s$ (compare solid and dashed lines in Fig.~\ref{fig:fig-5}). This error is further compounded for $T_s$ corresponding to the peak of moist adiabatic warming $\Delta T$ (Eq.~\ref{eq:delta_t_taylor_pressure}), leading to a maximum error of 6.6 K at 420 hPa (compare solid and dotted lines in Fig.~\ref{fig:fig-5}). Thus the condition $c_L = c_{pd}$ provides a useful first-order estimate of $T_s$ where moist adiabatic warming peaks. Importantly the theory successfully captures the shift to warmer peak $T_s$ with height, which is due to the fact that temperature decreases with height and thus the transition from the vapor limited to cooling limited regime occurs at a warmer surface temperature with height.
 
 \begin{figure}[htbp]
  \centering
- \includegraphics[width=0.4\textwidth]{fig-2.png}\\
+ \includegraphics[width=\textwidth]{fig-2.png}\\
  \caption{The sensitivity of the moist adiabatic lapse rate to a change in surface temperature, $\partial\Gamma_m/\partial T_s$, exhibits a non-monotonic structure as a function of height and temperature (a). This structure arises from the competition between two opposing physical effects. The Cooling Term (b), which represents the effect of condensation from adiabatic cooling, is a negative contribution at all temperatures. The Pressure Term (c), which represents the effect of decreasing pressure with height, is a positive contribution. The non-monotonicity of the total sensitivity arises because the positive contribution from the Pressure Term grows more rapidly with $T_s$ than the negative contribution from the Cooling Term.}\label{fig:fig-2}
 \end{figure}
 
@@ -161,55 +204,63 @@ The Cooling Term is modulated by a prefactor that scales as $1/T^2$. This dampen
 
 
 \section{Implications of non-monotonicity in moist adiabatic warming on convection}
-The non-monotonic warming of a moist adiabat has implications for the dynamics of convection. For example, \cite{romps2016} showed that parcel buoyancy at the tropopause is a non-monotonic function of surface temperature. Romps' explanation is that as surface temperature increases the parcel's enthalpy anomaly is increasingly partitioned into a latent enthalpy (moisture) anomaly rather than a sensible enthalpy (temperature) anomaly. Since buoyancy is driven by the temperature anomaly between the rising parcel and its environment, the shift from sensible to latent enthalpy anomaly with warming leads to the tropopause buoyancy and thus CAPE to peak at an intermediate temperature. Here, we provide an alternative perspective of the non-monotonicity in buoyancy based on the sensitivity of the vertical moisture gradient ($\frac{dq_s}{dz}$) to warming.
-
-We model buoyancy ($B$) as the normalized virtual temperature difference between a non-entraining parcel ($T_{v,p}$) and the environment ($T_{v,e}$). For simplicity, we will use standard temperature:
+The non-monotonic warming of a moist adiabat has implications for the dynamics of convection. For example, \cite{romps2016} showed that parcel buoyancy is a non-monotonic function of surface temperature. Specifically the criterion where $B$ peaks is $\beta = 2c_{pd}$ where
 \begin{equation}
-B(z)\approx\frac{g}{T_e(z)}(T_p(z)-T_e(z)) \label{eq:buoyancy_def}
+\beta = c_{pd} + L_v\frac{\partial q_s}{\partial T} = c_{pd} + c_L
+\end{equation}
+Thus the criterion that maximizes $B$ is equivalent to where moist adiabatic warming peaks, $c_{pd} = c_L$. Below, we show this is true if the entrainment parameter $a = PE \epsilon / g$\footnote{$PE$ is precipitation efficiency, $\epsilon$ is the fractional entrainment rate, and $g$ is gravitational acceleration. See \cite{romps2016} for the derivation of the entraining plume model.} is small and derive a more general criterion that maximizes $B$. 
+
+Buoyancy $B$ is the normalized virtual temperature (or equivalently, density) difference between the rising parcel $T_{v,p}$ and the environment $T_{v,e}$. Here we neglect the virtual effects of water and we use standard temperature:
+\begin{equation}
+B\approx\frac{g}{T_e}(T_p-T_e) \label{eq:buoyancy_def}
 \end{equation}
 As before, we express temperature profiles in terms of $T_s$ and the integral of their respective lapse rates. We assume the parcel follows a moist adiabatic lapse rate, $\Gamma_m$, while the environment follows an entraining lapse rate, $\Gamma_e$.
 \begin{align}
-T_p(z)&=T_s-\int_0^z \Gamma_m(z')dz' \label{eq:Tp_profile} \\
-T_e(z)&=T_s-\int_0^z \Gamma_e(z')dz' \label{eq:Te_profile}
+T_p&=T_s+\int_{p_s}^p \Gamma_m(p') \, dp' \label{eq:Tp_profile} \\
+T_e&=T_s+\int_{p_s}^p \Gamma_e(p') \, dp' \label{eq:Te_profile}
 \end{align}
-Substituting Eq.~(\ref{eq:Tp_profile}) and (\ref{eq:Te_profile}) into the definition of buoyancy (Eq.~\ref{eq:buoyancy_def}) yields:
+Substituting Eq.~(\ref{eq:Tp_profile}) and (\ref{eq:Te_profile}) into the definition of buoyancy Eq.~(\ref{eq:buoyancy_def}) yields:
 \begin{equation}
-B(z)\approx\frac{g}{T_e(z)}\int_0^z(\Gamma_e(z')-\Gamma_m(z'))dz' \label{eq:buoyancy_integral}
+B\approx\frac{g}{T_e}\int_{p_s}^p \delta \Gamma \, dp' \label{eq:buoyancy_integral}
 \end{equation}
-The lapse rate of the entraining environment, $\Gamma_e$, can be derived from the conservation of entraining moist static energy following Eq.~(B18) in \cite{romps2016}. This yields:
+where $\delta\Gamma = \Gamma_e - \Gamma_m$. We use the same entraining plume model as in \cite{romps2016} but express the lapse rate in pressure coordinates:
 \begin{equation}
-\Gamma_e = \frac{g}{c_p} + \frac{L_v}{c_p(1+a)}\frac{dq_s}{dz} \label{eq:gamma_e}
+\Gamma_e = \Gamma_d \cdot \frac{(1+a)\alpha_d + \alpha_L}{(1+a)c_{pd}+c_L} \label{eq:gamma_e}
 \end{equation}
-where $a$ is a dimensionless entrainment parameter. Here, we use $a=0.2$ following \cite{romps2016}. The difference between the environmental and parcel lapse rates is therefore directly proportional to the vertical moisture gradient:
+Substituting Eq.~(\ref{eq:gamma_m_ratio}) and (\ref{eq:gamma_e}) into Eq.~(\ref{eq:buoyancy_integral}) and simplifying gives:
 \begin{equation}
-\Gamma_e(z')-\Gamma_m(z')=\left(\frac{1}{1+a}-1\right)\frac{L_v}{c_p}\frac{dq_s}{dz}=-\frac{a}{1+a}\frac{L_v}{c_p}\frac{dq_s}{dz} \label{eq:gamma_diff}
+    B = \frac{g}{T_e}\int_{p_s}^p \Gamma_d \cdot \frac{a(1-k)\tilde{c}}{(1+a+\tilde{c})(1+\tilde{c})} \, dp' \label{eq:buoyancy_final}
 \end{equation}
-Substituting Eq.~(\ref{eq:gamma_diff}) into Eq.~(\ref{eq:buoyancy_integral}) shows that the same physical mechanism used to explain the non-monotonicity in moist adiabatic warming applies for buoyancy:
-\begin{equation}
-B(z)=-\frac{g}{T_e(z)}\left(\frac{a}{1+a}\frac{L_v}{c_p}\right)\int_0^z\frac{dq_s}{dz'}dz' \label{eq:buoyancy_final}
-\end{equation}
-This shows that buoyancy is directly proportional to the vertical integral of the moisture gradient, $dq_s/dz$. Since $dq_s/dz$ is composed of the competing Cooling and Pressure terms, it follows that buoyancy is governed by the same mechanism.
+If we assume that $a$ does not vary with $T_s$, $T_e$ increases monotonically with $T_s$ at all $p$. The origin of the non-monotonicity of $B$ must be in the integrand, $\delta \Gamma$. $B$ depends on $T$ primarily through $\tilde{c}$, which scales exponentially with $T$ through $q_s$, whereas $\Gamma_d$ and $k$ are linear functions of $T$. In the limit of $\tilde{c} \to 0$ (cold and dry), $\delta\Gamma$ scales as $\tilde{c}$, which increases with $T$. In the limit of $\tilde{c} \to \infty$ (warm and humid), $\delta\Gamma$ scales as $\tilde{c}^{-1}$, which decreases with increasing $T$. Thus the integrand maximizes at some intermediate $\tilde{c}$.
 
-Numerical calculations confirm this expectation. The results show that buoyancy at a fixed height first increases and then decreases as the $T_s$ increases (Fig.~\ref{fig:fig-5}). Decomposing the total buoyancy into the two components reveals the source of this behavior (Fig.~\ref{fig:fig-6}). The total buoyancy, $B_{\text{total}}$, is the sum of the contributions from the Cooling Term ($B_{\text{cool}}$) and the Pressure Term ($B_{\text{pres}}$):
-\begin{align}
-B_{\text{cool}}(z) &= -\frac{g}{T_e(z)} \left( \frac{a}{1+a} \frac{L_v}{c_p} \right) \int_0^z \left(-\Gamma_m \frac{\partial q_s}{\partial T}\right) dz' \label{eq:b_cool} \\
-B_{\text{pres}}(z) &= -\frac{g}{T_e(z)} \left( \frac{a}{1+a} \frac{L_v}{c_p} \right) \int_0^z \left(-\rho g \frac{\partial q_s}{\partial p}\right) dz' \label{eq:b_pres} \\
-B_{\text{total}}(z) &= B_{\text{cool}}(z) + B_{\text{pres}}(z) \label{eq:b_total}
-\end{align}
-The Cooling Term provides a positive buoyancy contribution that increases monotonically with surface temperature, while the Pressure Term provides a negative buoyancy contribution that also grows in magnitude. The sum of these two opposing effects produces the non-monotonic behavior of buoyancy.
+To solve for the condition that maximizes buoyancy we solve for the $\tilde{c}$ derivative of the integrand $\delta \Gamma$ in Eq.~(\ref{eq:buoyancy_final}) and set it to zero:
+\begin{equation}
+    \frac{d}{d \tilde{c}}\left(\Gamma_d \cdot \frac{a(1-k)\tilde{c}}{(1+a+\tilde{c})(1+\tilde{c})}\right) = 0 \label{eq:buoyancy_derivative}
+\end{equation}
+If we assume that $a$, $k$, and $\Gamma_d$ do not vary with $T$, the solution to Eq.~(\ref{eq:buoyancy_derivative}) is
+\begin{equation}
+    \tilde{c}_\text{peak}=\sqrt{1+a} \label{eq:buoyancy_quadratic}
+\end{equation}
+Thus the condition that maximizes buoyancy is $c_L = \sqrt{1+a} c_{pd}$. In the limit of weak entrainment $a \to 0$, this reduces to $c_L = c_{pd}$. In the presence of entrainment, buoyancy peaks at a higher $c_L$ and thus higher $T_s$ all else equal. Entrainment reduces the latent heat released by the cooling parcel given the same $q_s$ so it shifts the critical point that separates the vapor limited and cooling limited regimes toward higher $q_s$.
+
+How important is the factor $\sqrt{1+a}$? For an entrainment rate representative of Earth's current climate $a=0.2$, the difference in peak $T_s$ that corresponds to $c_L=c_{pd}$ and $c_L=\sqrt{1+a}c_{pd}$ are $< 1.49$ K (compare red and solid black line in Fig.~\ref{fig:fig-6}a). This difference decreases with height and becomes negligibly small around the tropopause (e.g., 0.33 K at $p=100$ hPa), which explains why the criteria $c_L = c_{pd}$ works well for explaining the non-monotonicity of CAPE \citep{romps2016}. However, for stronger entrainment rates and for understanding the non-monotonicity of buoyancy in the lower troposphere the factor $\sqrt{1+a}$ can be important (e.g., 4.38 K for $a=0.7$ at the surface; compare red and solid black line in Fig.~\ref{fig:fig-6}b).
+
+
+How well do these criteria capture the $T_s$ that maximizes buoyancy across the troposphere? We will first focus on $\delta \Gamma$, i.e. the integrand in Eq.~(\ref{eq:buoyancy_integral}). For $a=0.2$ both criteria capture the $T_s$ that corresponds to the peak in $\delta \Gamma$ well ($<1.39$ K for $c_L=\sqrt{1+a}c_{pd}$, $< 2.87$ K for $c_L=c_{pd}$, compare red and solid black line to dashed line in Fig.~\ref{fig:fig-6}a). The small error arises even for the $c_L=\sqrt{1+a}c_{pd}$ criterion because $\Gamma_d(1-k)$ is weakly non-monotonic with $T$ ($\Gamma_d$ increases with $T$ and $(1-k)$ decreases with $T$), which we ignored in order to analytically solve Eq.~(\ref{eq:buoyancy_derivative}). This error is amplified as we integrate $\delta \Gamma$ to obtain buoyancy Eq.~(\ref{eq:buoyancy_integral}) because the errors in the location of peak $\delta \Gamma$ from each level below accumulates for the location of peak $B$ compare red and solid black line to dotted line in Fig.~\ref{fig:fig-6}a).
+
+For a higher entrainment parameter $a=0.7$ the importance of the factor $\sqrt{1+a}$ becomes clear. The error in $T_s$ that corresponds to the peak in $\delta \Gamma$ is $<3.39$ K for the $c_L=\sqrt{1+a}c_{pd}$ criterion compared to $<5.83$ K for the $c_L=c_{pd}$ criterion (compare red and solid black line to dashed line in Fig.~\ref{fig:fig-6}b). The error in $T_s$ that corresponds to the peak in buoyancy is surprisingly lower for the $c_L=c_{pd}$ criterion ($<3.37$ K) compared to the $c_L=\sqrt{1+a}c_{pd}$ criterion ($<4.66$ K, compare red and solid black lines to dotted black line in Fig.~\ref{fig:fig-6}b). This is because $c_L=c_{pd}$ underpredicts $T_s$ for peak $B$ in the lower troposphere, which offsets the growth of the larger error in peak $\delta \Gamma$ (compare solid black and dotted lines in Fig.~\ref{fig:fig-6}b). While the criteria $c_L=c_{pd}$ may provide a better estimate of peak buoyancy in some cases, it doesn't do so for the right reasons. For example the criteria $c_L=c_{pd}$ predicts no shift in $T_s$ that maximizes $B$ to perturbations in $a$ while the criterion $c_L=\sqrt{1+a}c_{pd}$ captures the shift in peak $\delta \Gamma$ and $B$ toward warmer $T_s$ with increasing entrainment (Fig.~\ref{fig:fig-6}c).
 
 This non-monotonic behavior of buoyancy extends to the strength of the convective updraft. We model the updraft's specific kinetic energy, $\frac{1}{2}w^2$, using Eq.~(1) from \cite{delgenio2007}:
 \begin{equation}
 \frac{d}{dz}\left(\frac{1}{2}w^2\right)=a'B(z)-(1+b')\epsilon(z)w^2 \label{eq:momentum}
 \end{equation}
-where $a'$ and $b'$ are dimensionless constants. We use $a'=1/6$ and $b'=2/3$ following \cite{delgenio2007}. $\epsilon(z)$ is the fractional entrainment rate, which is calculated following Eq.~(3) in \cite{romps2016} with precipitation efficiency $PE=0.35$. Since $w(z)$ is determined by the integral of the net force, which includes buoyancy, we expect the non-monotonic dependence on $T_s$ extends to the vertical velocity profile as well.
+where $a'$ and $b'$ are dimensionless constants. We use $a'=1/6$ and $b'=2/3$ following \cite{delgenio2007}. $\epsilon(z)$ is the fractional entrainment rate, which is calculated following Eq.~(3) in \cite{romps2016} with entrainment parameter $a=0.2$ and precipitation efficiency $PE=0.35$. Since $w(z)$ is determined by the integral of the net force, which includes buoyancy, we expect the non-monotonic dependence on $T_s$ extends to the vertical velocity profile as well.
 
-Numerically integrating Eq.~(\ref{eq:momentum}) confirms this expectation (Fig.~\ref{fig:fig-7}). The resulting vertical velocity profiles exhibit a clear non-monotonic dependence on $T_s$. Because Eq.~(\ref{eq:momentum}) is non-linear, the contributions from the two buoyancy terms are not simply additive. We therefore isolate the influence of each term by first calculating the velocity driven by the Cooling Term's positive buoyancy alone ($w_{\text{cool}}$), and then calculating the effect of the Pressure Term ($w_{\text{pres}}$) as the residual required to recover the total velocity ($w_{\text{total}}$):
-\begin{align}
-\frac{d}{dz}\left(\frac{1}{2}w_{\text{cool}}^2\right)&=a'B_{\text{cool}}(z)-(1+b')\epsilon(z)w_{\text{cool}}^2 \label{eq:w_cool} \\
-w_{\text{pres}}(z)&=w_{\text{total}}(z)-w_{\text{cool}}(z) \label{eq:w_pres}
-\end{align}
-This decomposition (Fig.~\ref{fig:fig-8}) shows that the monotonically increasing velocity from the Cooling Term is counteracted by an increasingly strong opposing effect from the Pressure Term, resulting in the non-monotonic total response.
+Numerically integrating Eq.~(\ref{eq:momentum}) confirms this expectation. The resulting vertical velocity varies non-monotonically with $T_s$ (Fig.~\ref{fig:fig-7}b). This leads w(z) becoming more top-heavy with warming, i.e. w decreases in the lower troposphere and increases in the upper troposphere (Fig.~\ref{fig:fig-7}a).
+
+Are these findings relevant to Earth's atmosphere, where convection is not strictly moist adiabatic and vertical velocity is subject to details and constraints not considered here such as cloud microphysics and radiative cooling? To test this we analyzed output from a set of 9 convective-resolving models simulating radiative convective equilibrium in a 100 km x 100 km domain from the RCEMIP project \citep{wing2018}. We look at the mean vertical velocity profiles for $w$ exceeding the 99.9th percentile at each height level. The 99.9th percentile corresponds to the fastest 1000 samples of $w$ per level per model. We focus on strong convective updrafts because the buoyancy is highest for those parcels that are closest to the moist adiabat.
+
+The vertical velocity profiles from the RCEMIP simulations show diverse $w_{>99.9}$ responses to variations in surface temperature (295, 300, and 305 K, see Fig.~\ref{fig:fig-8}). Some models exhibit a clear top-heavy shift in $w_{>99.9}$ with warming (e.g., CM1, DAM, UCLA-CRM, UKMO, WRF) accompanied by a decrease in $w_{>99.9}$ in the lower troposphere that is qualitatively consistent with the moist adiabatic theory (Fig.~\ref{fig:fig-7}a). SAM shows a top-heavy shift in $w_{>99.9}$ without a clear decrease in $w_{>99.9}$ in the lower troposphere. In the remaining models the $w_{>99.9}$ response exhibits non-monotonicity with $T_s$ but the peak $w_{>99.9}$ does not necessarily increase. For example DALES and SCALE predict a non-monotonic response in $w_{>99.9}$ with $T_s$ at $z\approx8$ km but the peak $w_{>99.9}$ weakens from $T_s=300$ to 305 K. MesoNH also predicts a decrease in peak $w_{>99.9}$ from $T_s=300$ K to 305 K but predicts a non-monotonic response in $w_{>99.9}$ with $T_s$ at $z\approx3$ km, much lower than in DALES and SCALE. The diversity in responses likely arises from differences in model details and emergent behavior such as convective organization that influence convective dynamics beyond the thermodynamic processes considered here. Nonetheless, the presence of non-monotonicity and a top-heavy shift in several models suggest that the implications of non-monotonicity in moist adiabatic warming on convective dynamics may be playing a role in shaping the response of convective updrafts in the real atmosphere.
 
 \begin{figure}[htbp]
  \centering
@@ -240,7 +291,7 @@ This decomposition (Fig.~\ref{fig:fig-8}) shows that the monotonically increasin
 
 \section{Summary and Discussion}
 
-This paper presents a thermodynamic explanation for the non-monotonicity of moist adiabat warming. The non-monotonicity arises through the competing influences of a Cooling Term and a Pressure Term on the sensitivity of the moist adiabatic lapse rate. While both terms are proportional to the saturation specific humidity ($q_s$), which increases nearly exponentially with temperature, they are modulated by prefactors with different inverse temperature dependencies. The Cooling Term is proportional to $q_s/T^2$, while the Pressure Term is proportional to $q_s/T$. The non-monotonic response arises because the stronger $1/T^2$ dependence of the Cooling Term's prefactor causes its influence to weaken relative to that of the Pressure Term as the climate warms, leading to a crossover in their relative sensitivity to surface warming. The same mechanism for lapse rate sensitivity cascades to explain the non-monotonic behavior of convective buoyancy and vertical velocity as a function of $T_s$.
+This paper presents a thermodynamic explanation for the non-monotonicity of moist adiabatic warming. The non-monotonicity arises through 
 
 Our findings on buoyancy complement the work of \cite{romps2016}, who first explained the non-monotonicity of CAPE. The two studies offer different but complementary insights. \cite{romps2016} focused on explaining the non-monotonicity of buoyancy at the tropopause as a proxy for CAPE. Here, we focus on explaining the non-monotonicity of buoyancy at any fixed height. We also provide a different perspective on the source of non-monotonicity that arises from the competition in the sensitivity of a Cooling Term that favors condensation and a Pressure Term, driven by decreasing ambient pressure, that opposes it.
 
@@ -266,23 +317,22 @@ All scripts used for analysis and plots in this paper are available at \url{http
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \appendix[A] 
-
 \appendixtitle{Calculation of Moist Adiabatic Profiles}
 
 The moist adiabatic profiles are calculated numerically by assuming that moist static energy (MSE) is conserved, where:
 \begin{equation}
 \text{MSE}=c_p T+gz+L_v q_s \label{eq:mse_appendix}
 \end{equation}
-Here, $T$ is temperature, $z$ is height, $p$ is pressure, $q_s$ is the saturation specific humidity, $g$ is the acceleration due to gravity, $c_p$ is the specific heat of dry air at constant pressure, and $L_v$ is the latent heat of vaporization. All thermodynamic constants are defined in Table~\ref{tab:tableA1}. Saturation vapor pressure is calculated using Eq.~(10) in \cite{bolton1980}.
+Here, $T$ is temperature, $z$ is height, $q_s$ is the saturation specific humidity, $g$ is the acceleration due to gravity, $c_p$ is the specific heat of dry air at constant pressure, and $L_v$ is the latent heat of vaporization. All thermodynamic constants are defined in Table~\ref{tab:tableA1}. Saturation vapor pressure is calculated using Eq.~(10) in \cite{bolton1980}.
 
-The calculation proceeds in discrete vertical steps of $\Delta z$ (100 m). For a given surface temperature ($T_s$) and surface pressure ($p_s$), MSE is calculated at the surface ($z=0$) and is held constant over height. At each subsequent height step $z_{i+1}$, the pressure $p_{i+1}$ is first calculated using hydrostatic balance. Then, a numerical root-finding algorithm (scipy.optimize.root\_scalar with the Brentq method) is used to find the temperature $T_{i+1}$ that satisfies the condition that the MSE at ($T_{i+1}, p_{i+1}, z_{i+1}$) is equal to the surface MSE.
+The calculation proceeds in discrete vertical steps of $\Delta p = 50$ Pa). For a given surface temperature ($T_s$) and surface pressure ($p_s$), MSE is first calculated at the surface ($z=0$) and is held constant over height. At each subsequent pressure step $p_{i+1}$, the height $z_{i+1}$ is calculated using hydrostatic balance. Then, a numerical root-finding algorithm (scipy.optimize.root\_scalar with the Brentq method) is used to find the temperature $T_{i+1}$ that satisfies the condition that the MSE at ($T_{i+1}, p_{i+1}, z_{i+1}$) is equal to the surface MSE.
 
-To demonstrate that the non-monotonic warming is independent of the vertical coordinate, the results are also presented in pressure coordinates (Fig.~\ref{fig:fig-a1}). These profiles are obtained by interpolating the temperature profiles for the base and perturbed climates onto a common pressure grid. The warming profile in pressure coordinates, $\Delta T(p)$, is the difference between these two interpolated temperature profiles.
+To demonstrate that the non-monotonic warming is independent of the vertical coordinate, the results are also presented in height coordinates (Fig.~\ref{fig:fig-a1}). These profiles are obtained by following the same calculation as above except stepping in uniform intervals $\Delta z=100$ m. The pressure $p_{i+1}$ at height $z_{i+1}$ is calculated using hydrostatic balance.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[width=\textwidth]{fig-a1.png}
- \caption{The moist adiabatic warming response to a 4 K surface warming in pressure coordinates. (a) Vertical profiles of the temperature response ($\Delta T$) as a function of pressure for surface temperatures ($T_s$) of 280, 290, 300, 310, and 320 K. (b) The warming ($\Delta T$) at fixed pressure levels of 500, 400, 300, and 200 hPa as a function of $T_s$. The non-monotonic behavior seen in height coordinates (Fig.~\ref{fig:fig-1}c) is also evident in pressure coordinates.}\label{fig:fig-a1}
+ \caption{The moist adiabatic warming response to a 4 K surface warming in pressure coordinates. (a) Vertical profiles of the temperature response ($\Delta T$) as a function of pressure for surface temperatures ($T_s$) 280, 290, 300, 310, and 320 K. (b) The warming ($\Delta T$) at 5~km, 10~km, 15~km, and 20~km as a function of $T_s$. The non-monotonic behavior seen in height coordinates (Fig.~\ref{fig:fig-1}c) is also evident in pressure coordinates.}\label{fig:fig-a1}
 \end{figure}
 
 
@@ -298,12 +348,55 @@ $c_p$ & Specific heat of dry air & 1005.7 & J kg$^{-1}$ K$^{-1}$ \\
 $R_d$ & Gas constant for dry air & 287.05 & J kg$^{-1}$ K$^{-1}$ \\
 $R_v$ & Gas constant for water vapor & 461.5 & J kg$^{-1}$ K$^{-1}$ \\
 $\epsilon$ & Ratio of gas constants ($R_d/R_v$) & 0.622 & dimensionless \\
-$p_s$ & Reference surface pressure & 100,000 & Pa \\
+$p_s$ & Surface pressure & 1000 & hPa \\
 $L_v$ & Latent heat of vaporization & $2.501 \times 10^6$ & J kg$^{-1}$ \\
 \botline
 \end{tabular}
 \end{center}
 \end{table}
+
+\appendix[B] 
+\appendixtitle{Calculation of Moist Adiabatic Profiles}
+We assess how latent heat of fusion influences the non-monotonicity of moist adiabatic warming. We follow the IFS Cycle~40 approximations as summarized by \cite{flannaghan2014}. The fraction of liquid water $\alpha$ varies with $T$ as follows:
+\begin{equation}
+\alpha(T)=
+\begin{cases}
+0, & T \le T_{\mathrm{ice}},\\
+\left(\dfrac{T-T_{\mathrm{ice}}}{T_0-T_{\mathrm{ice}}}\right)^2 & T_{\mathrm{ice}}<T<T_0,\\
+1 & T \ge T_0,
+\end{cases}
+\end{equation}
+where $T_{\mathrm{ice}}=253.15$ K and $T_0=273.15$ K. Thus all condensate is ice below 253.15 K, all condensate is liquid above 273.15 K, and a quadratic transition occurs in between.
+
+The saturation vapor pressure $e_s$ is the weighted average over liquid ($e_\ell$) and ice ($e_i$):
+\begin{equation}
+e_s=\alpha e_{\ell}+(1-\alpha)e_i
+\end{equation}
+The saturation vapor pressure over liquid and ice is:
+\begin{equation}
+e_{\ell,i}(T) = a_1 \exp \left( a_3 \,\frac{T - T_0}{\,T - a_4\,} \right)
+\label{eq:es_general}
+\end{equation}
+where over liquid $a_1=611.21$ Pa, $a_3=17.502$, $a_4=32.19$ K \citep{buck1981} and over ice $a_1=611.21$ Pa, $a_3=22.587$, $a_4=-0.7$ K \citep{alduchov1996}.
+
+The effective latent heat of vaporization $L_e(T)$ includes both condensation and fusion:
+\begin{equation}
+L_e(T) = L_v + (1-\alpha) L_f
+\end{equation}
+where $L_f = 0.334 \times 10^6$~J~kg$^{-1}$ is the latent heat of fusion.
+
+Moist adiabats are obtained by solving for $T$ that conserves moist static energy with the effective latent heat $L_e$:
+\begin{equation}
+    h = c_{pd}T + gz + L_e q_s
+\end{equation}
+
+The vertical profiles of warming $\Delta T$ and the warming at fixed pressure levels versus surface temperature exhibit similar non-monotonic behavior to the case without fusion (compare Fig.~\ref{fig:fig-1} and \ref{fig:fig-b1}). Latent heat of fusion introduces a secondary local maximum in the warming in the mid troposphere (500~hPa) due to the additional energy release from fusion. Since fusion represents a secondary effect and complicates analytical treatment, we neglect it for the rest of the analysis.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=\textwidth]{fig-b1.png}
+ \caption{The moist adiabatic warming response to a 4 K surface warming. (a) Vertical profiles of the temperature response ($\Delta T$) as a function of pressure for surface temperatures ($T_s$) of 280, 290, 300, 310, and 320 K. (b) The warming ($\Delta T$) at fixed pressure levels of 500, 400, 300, and 200 hPa as a function of $T_s$. The non-monotonic behavior seen without fusion (Fig.~\ref{fig:fig-1}c) is also evident in the presence of fusion.}\label{fig:fig-b1}
+\end{figure}
 
 \clearpage
 
