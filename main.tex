@@ -64,14 +64,16 @@ The Clausius-Clapeyron relation describes the potential for a warmer atmosphere 
 
 In the tropics, convection couples the surface with the free troposphere. Although processes like convective entrainment influence the details of this coupling \citep{miyawaki2020}, moist adiabatic adjustment serves as a useful first-order approximation \citep{held1993}. The top-heavy warming profile predicted by moist adiabatic adjustment (Fig.~\ref{fig:fig-1}b) is a robust feature in climate models and observations, despite historical challenges in observational records \citep{vallis2015, santer2005}.
 
-This warming profile is important because it increases atmospheric static stability, which influences convection \citep{neelin1987}. This structure also defines the tropical lapse rate feedback, a key negative feedback for global climate sensitivity \citep{hansen1984}. The lapse rate feedback partially cancels the water vapor feedback and scales in tandem because amplified warming in the upper troposphere is a consequence of enhanced latent heat release \citep{held2012}. In a moist adiabatic atmosphere that is saturated at the surface, total latent heat release scales with surface humidity for deep convection that reaches the tropopause where $q_\text{tropopause}\ll q_\text{surface}$ because the tropopause temperature is approximately invariant with warming \citep{seeley2019}. Given the monotonic increase in surface humidity (Fig.~\ref{fig:fig-1}a), one might expect moist adiabatic warming to also be monotonic with surface temperature at all heights. However, it is a non-monotonic function of surface temperature at a fixed pressure (Fig.~\ref{fig:fig-1}c, see Appendix~A for details on how the moist adiabat is calculated). This non-monotonicity arises in height coordinates (Fig.~\ref{fig:fig-a1}) and when the latent heat of fusion is included (see Appendix~B and Fig.~\ref{fig:fig-b1}). While \citet{levine2016} showed this non-monotonicity and its influence on zonal stationary circulations, a physical explanation for the non-monotonicity in moist adiabatic warming currently does not exist in the literature.
+This warming profile is important because it increases atmospheric static stability, which influences convection \citep{neelin1987}. This structure also defines the tropical lapse rate feedback, a key negative feedback for global climate sensitivity \citep{hansen1984}. The lapse rate feedback partially cancels the water vapor feedback and scales in tandem because amplified warming in the upper troposphere is a consequence of enhanced latent heat release \citep{held2012}. In a moist adiabatic atmosphere that is saturated at the surface, total latent heat release $L_v (q_\mathrm{surface}-q_\mathrm{top})$ where $q_\mathrm{surface}$ is surface specific humidity and $q_\mathrm{top}$ is the cloud top specific humidity. For deep convection that reaches the tropopause we can approximate $q_\mathrm{top}$ as $q_\mathrm{tropopause}$ where $q_\mathrm{tropopause}$ is invariant with surface temperature \citep{seeley2019}. Thus to first order we expect total latent heat release to scale as $q_\mathrm{surface}$, which increases monotonically with surface temperature following the Clausius-Clapeyron relation (Fig.~\ref{fig:fig-1}a).
 
-This raises the question: What physical mechanism drives this non-monotonic warming? This paper presents a thermodynamic explanation for the origins of non-monotonicity in moist adiabatic warming and its cascading effects on buoyancy and vertical velocity. Section 2 develops the theory of non-monotonic warming. Section 3 explores the implications of this non-monotonicity for buoyancy and vertical velocity. Section 4 provides a summary and discussion.
+Given the monotonic increase total latent heating with surface temperature, one might expect moist adiabatic warming to also increase monotonically with surface temperature at all levels. However, it is a non-monotonic function of surface temperature at fixed pressure levels (Fig.~\ref{fig:fig-1}c, see Appendix~A for details on how the moist adiabat is calculated). This non-monotonicity arises in height coordinates (Fig.~\ref{fig:fig-a1}), with or without latent heat of fusion (see Appendix~B and Fig.~\ref{fig:fig-b1}), and across different empirical formula for saturation vapor pressure (see Appendix~C and Fig.~\ref{fig:fig-c1}). While \citet{levine2016} showed this non-monotonicity and its influence on zonal stationary circulations, an explanation for the non-monotonicity in moist adiabatic warming does not exist in the literature.
+
+This raises the question: What physical mechanism drives this non-monotonic warming? Here we provide a thermodynamic explanation for the origin of non-monotonicity in moist adiabatic warming and its cascading effects on buoyancy and vertical velocity.
 
 \begin{figure}[htbp]
  \centering
  \includegraphics[width=0.4\textwidth]{fig-1.png}\\
-\caption{(a) The change in column-integrated saturation specific humidity resulting from a 4 K surface warming as a function of surface temperature ($T_s$). (b) Profiles of the moist adiabatic temperature response ($\Delta T$) to a 4 K surface warming, plotted against pressure, for $T_s = $ 280, 290, 300, 310, and 320 K. (c) The warming ($\Delta T$) at 500, 400, 300, and 200 hPa as a function of $T_s$, showing a non-monotonic response where warming peaks at an intermediate temperature.}
+\caption{(a) Surface saturation specific humidity as a function of surface temperature. (b) Vertical profiles of moist adiabatic warming to a 4 K surface warming, plotted against pressure, for $T_s = $ 280, 290, 300, 310, and 320 K. (c) The moist adiabatic warming at 500, 400, 300, and 200 hPa as a function of surface temperature shows a non-monotonic response where warming peaks at an intermediate surface temperature.}
 \label{fig:fig-1}
 \end{figure}
 
@@ -187,7 +189,7 @@ The error in $T_s$ predicted by the theory and the true peak of $\Gamma_m / d T_
 \begin{figure}[htbp]
  \centering
  \includegraphics[width=\textwidth]{fig-2.png}\\
- \caption{The sensitivity of the moist adiabatic lapse rate to a change in surface temperature, $\partial\Gamma_m/\partial T_s$, exhibits a non-monotonic structure as a function of height and temperature (a). This structure arises from the competition between two opposing physical effects. The Cooling Term (b), which represents the effect of condensation from adiabatic cooling, is a negative contribution at all temperatures. The Pressure Term (c), which represents the effect of decreasing pressure with height, is a positive contribution. The non-monotonicity of the total sensitivity arises because the positive contribution from the Pressure Term grows more rapidly with $T_s$ than the negative contribution from the Cooling Term.}\label{fig:fig-2}
+ \caption{(a) The sensitivity of the moist adiabatic lapse rate to surface temperature, $d\Gamma_m/d T_s$, varies non-monotonically with surface temperature. (b) $d\Gamma_m/d T_s$ has a local minimum across surface temperature. A minimum in $d\Gamma_m/d T_s$ corresponds to a maximum in moist adiabatic warming (Fig.~\ref{fig:fig-1}b) because the integral bounds in Eq.~\ref{eq:delta_t_taylor_pressure} decreases from $p_s$ to $p$, which introduces a negative sign. (c) The sensitivity of the moist adiabatic lapse rate to the local temperature at pressure $p$, $\partial\Gamma_m/\partial T$, also varies non-monotonically with surface temperature. (d) The integral term in Eq.~(\ref{eq:total_sensitivity}) amplifies the non-monotonicity of $\partial\Gamma_m/\partial T$. (a) is the product of (c) and (d).}\label{fig:fig-2}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -301,7 +303,7 @@ The non-monotonicity of moist adiabatic warming may have additional implications
 % ACKNOWLEDGMENTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \acknowledgments
-I thank Andrew Williams, Jiawei Bao, Jonah Bloch-Johnson, Martin Singh, and Stephen Po-Chedley for helpful discussions.
+I thank Andrew Williams, Jiawei Bao, Jonah Bloch-Johnson, Martin Singh, Stephen Po-Chedley, Nadir Jeevanjee, and two anonymous reviewers for helpful discussions and feedback on the manuscript.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DATA AVAILABILITY STATEMENT
@@ -318,14 +320,14 @@ All scripts used for analysis and plots in this paper are available at \url{http
 
 \appendix[A] 
 \appendixtitle{Calculation of Moist Adiabatic Profiles}
-
-The moist adiabatic profiles are calculated numerically by assuming that moist static energy (MSE) is conserved, where:
+\label{app:calculation}
+The moist adiabatic profiles are calculated numerically by assuming that saturation moist static energy $h$ is conserved, where:
 \begin{equation}
-\text{MSE}=c_p T+gz+L_v q_s \label{eq:mse_appendix}
+h=c_p T+gz+L_v q_s \label{eq:mse}
 \end{equation}
 Here, $T$ is temperature, $z$ is height, $q_s$ is the saturation specific humidity, $g$ is the acceleration due to gravity, $c_p$ is the specific heat of dry air at constant pressure, and $L_v$ is the latent heat of vaporization. All thermodynamic constants are defined in Table~\ref{tab:tableA1}. Saturation vapor pressure is calculated using Eq.~(10) in \cite{bolton1980}.
 
-The calculation proceeds in discrete vertical steps of $\Delta p = 50$ Pa). For a given surface temperature ($T_s$) and surface pressure ($p_s$), MSE is first calculated at the surface ($z=0$) and is held constant over height. At each subsequent pressure step $p_{i+1}$, the height $z_{i+1}$ is calculated using hydrostatic balance. Then, a numerical root-finding algorithm (scipy.optimize.root\_scalar with the Brentq method) is used to find the temperature $T_{i+1}$ that satisfies the condition that the MSE at ($T_{i+1}, p_{i+1}, z_{i+1}$) is equal to the surface MSE.
+The calculation proceeds in discrete vertical steps of $\Delta p = 50$ Pa). For a given surface temperature ($T_s$) and surface pressure ($p_s$), $h$ is first calculated at the surface ($z=0$) and is held constant over height. At each subsequent pressure step $p_{i+1}$, the height $z_{i+1}$ is calculated using hydrostatic balance. Then, a numerical root-finding algorithm (scipy.optimize.root\_scalar with the Brentq method) is used to find the temperature $T_{i+1}$ that satisfies the condition that the $h$ at ($T_{i+1}, p_{i+1}, z_{i+1}$) is equal to the surface $h$.
 
 To demonstrate that the non-monotonic warming is independent of the vertical coordinate, the results are also presented in height coordinates (Fig.~\ref{fig:fig-a1}). These profiles are obtained by following the same calculation as above except stepping in uniform intervals $\Delta z=100$ m. The pressure $p_{i+1}$ at height $z_{i+1}$ is calculated using hydrostatic balance.
 
@@ -356,7 +358,8 @@ $L_v$ & Latent heat of vaporization & $2.501 \times 10^6$ & J kg$^{-1}$ \\
 \end{table}
 
 \appendix[B] 
-\appendixtitle{Calculation of Moist Adiabatic Profiles}
+\appendixtitle{Effect of Latent Heat of Fusion on Moist Adiabatic Warming}
+\label{app:fusion}
 We assess how latent heat of fusion influences the non-monotonicity of moist adiabatic warming. We follow the IFS Cycle~40 approximations as summarized by \cite{flannaghan2014}. The fraction of liquid water $\alpha$ varies with $T$ as follows:
 \begin{equation}
 \alpha(T)=
@@ -390,12 +393,41 @@ Moist adiabats are obtained by solving for $T$ that conserves moist static energ
     h = c_{pd}T + gz + L_e q_s
 \end{equation}
 
-The vertical profiles of warming $\Delta T$ and the warming at fixed pressure levels versus surface temperature exhibit similar non-monotonic behavior to the case without fusion (compare Fig.~\ref{fig:fig-1} and \ref{fig:fig-b1}). Latent heat of fusion introduces a secondary local maximum in the warming in the mid troposphere (500~hPa) due to the additional energy release from fusion. Since fusion represents a secondary effect and complicates analytical treatment, we neglect it for the rest of the analysis.
+The vertical profiles of warming $\Delta T$ and the warming at fixed pressure levels versus surface temperature exhibit similar non-monotonic behavior to the case without fusion (compare Fig.~\ref{fig:fig-1} and \ref{fig:fig-b1}). Latent heat of fusion introduces a secondary local maximum in the warming in the mid troposphere (500~hPa) due to the additional energy release from fusion. When the secondary peak is to the right of the primary peak the $T_s$ corresponding to peak warming shifts to colder $T_s$ with fusion (points below the 1:1 line in Fig.~\ref{fig:fig-b1}). As the secondary peak overlaps with the primary peak the $T_s$ corresponding to peak warming shifts to warmer $T_s$ with fusion (points above the 1:1 line in Fig.~\ref{fig:fig-b1}). This effect is greatest (6.03~K) at 727~hPa. Since fusion represents a secondary effect and complicates analytical treatment, we neglect it for the rest of the paper.
 
 \begin{figure}[htbp]
  \centering
- \includegraphics[width=\textwidth]{fig-b1.png}
- \caption{The moist adiabatic warming response to a 4 K surface warming. (a) Vertical profiles of the temperature response ($\Delta T$) as a function of pressure for surface temperatures ($T_s$) of 280, 290, 300, 310, and 320 K. (b) The warming ($\Delta T$) at fixed pressure levels of 500, 400, 300, and 200 hPa as a function of $T_s$. The non-monotonic behavior seen without fusion (Fig.~\ref{fig:fig-1}c) is also evident in the presence of fusion.}\label{fig:fig-b1}
+ \includegraphics[width=0.55\textwidth]{fig-b1.png}
+ \caption{The moist adiabatic warming response to a 4 K surface warming with latent heat of fusion. (a) Vertical profiles of the temperature response ($\Delta T$) as a function of pressure for surface temperatures ($T_s$) of 280, 290, 300, 310, and 320 K. (b) The warming ($\Delta T$) at fixed pressure levels of 500, 400, 300, and 200 hPa as a function of $T_s$. (c) $T_s$ corresponding to peak warming with and without fusion.}\label{fig:fig-b1}
+\end{figure}
+
+\appendix[C] 
+\appendixtitle{Effect of Saturation Vapor Pressure Formula on Moist Adiabatic Warming}
+\label{app:svp}
+The calculation of moist adiabatic warming profiles depends on the choice of the saturation vapor pressure formula. To assess the sensitivity of surface temperatures associated with peak moist adiabatic warming to different formula we test three formula: \cite{bolton1980}, Goff-Gratch \citep{list1949}, and \cite{murphy2005}.
+
+The \cite{bolton1980} formula is:
+\begin{equation}
+e_s = 6.112 \exp\left(\frac{17.67 (T - 273.15)}{T - 29.65}\right) \quad [\text{hPa}],
+\end{equation}
+
+The Goff-Gratch formula is:
+\begin{multline}
+\log_{10} e_w = -7.90298 \left(\frac{373.16}{T} - 1\right) + 5.02808 \log_{10}\left(\frac{373.16}{T}\right)\\ - 1.3816 \times 10^{-7} \left(10^{11.344 (1 - T/373.16)} - 1\right)\\ + 8.1328 \times 10^{-3} \left(10^{-3.49149 (373.16/T - 1)} - 1\right)\\ + \log_{10}(1013.246) \quad [\text{hPa}]
+\end{multline}
+
+The \cite{murphy2005} formula is:
+\begin{multline}
+\ln e_w = 54.842763 - \frac{6763.22}{T} - 4.210 \ln T + 0.000367 T\\ + \tanh\left(0.0415 (T - 218.8)\right) \left(53.878 - \frac{1331.22}{T} - 9.44523 \ln T + 0.014025 T\right) \quad [\text{Pa}],
+\end{multline}
+where $T$ is in Kelvin for all 3 formula.
+
+\cite{bolton1980} is sufficiently accurate for the purposes of evaluating the $T_s$ that leads to maxima in moist adiabatic warming (Fig.~\ref{fig:fig-c1}). The differences in peak $T_s$ across the three saturation vapor pressure formula are small, with the largest deviation being 0.27~K between Bolton and Goff-Gratch and 0.34~K between Bolton and Murphy-Koop. Thus we use \cite{bolton1980} for the rest of the paper.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=0.4\textwidth]{fig-c1.png}
+ \caption{(a) $T_s$ corresponding to peak warming using \cite{bolton1980} and Goff-Gratch saturation vapor pressure formula. (b) Same as (a) but comparing \cite{bolton1980} and \cite{murphy2005}.}\label{fig:fig-c1}
 \end{figure}
 
 \clearpage
