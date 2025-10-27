@@ -680,6 +680,7 @@ Generated using the official AMS \LaTeX\ template v6.1 two-column layout. This w
 %\usepackage{mdframed}
 %\usepackage{cuted}
 \usepackage{setspace}
+\usepackage{anyfontsize}
 
 %% Start line numbers immediately if in draft mode
 \ifdraft

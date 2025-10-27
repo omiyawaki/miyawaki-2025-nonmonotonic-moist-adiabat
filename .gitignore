@@ -21,3 +21,9 @@ old/.DS_Store
 .gitignore
 .DS_Store
 main.pdf
+response_to_reviewers.fdb_latexmk
+response_to_reviewers.aux
+response_to_reviewers.fls
+response_to_reviewers.log
+response_to_reviewers.out
+.gitignore

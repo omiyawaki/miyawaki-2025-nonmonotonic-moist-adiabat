@@ -1,0 +1,167 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\title{Response to Reviewers}
+\author{Osamu Miyawaki}
+
+\begin{document}
+
+\maketitle
+
+I thank all three reviewers for their thoughtful comments and feedback, which helped improve the manuscript. I explain how the revised manuscript addresses each of the reviewers' comments. My response to each comment is in \textbf{bold}.
+
+\section{Reviewer \#1}
+
+This manuscript provides an explanation for why moist-adiabatic warming is non-monotonic as a function of the initial surface temperature. In addition, it shows results for the implications for buoyancy and updraft velocity in convection. I found the results interesting and intuitive, but there are some issues with the manuscript that would have to be addressed for publication.
+
+\subsection{Major comments}
+line 52: Need to clarify that you are assuming surface saturation throughout the paper (i.e. surface relative humidity is 100\%). Also, I think you may be neglecting latent heat of fusion. If so, would this affect the results significantly?
+\par
+\textbf{I now clarify that the air is saturated from the surface throughout the paper (Line X[intro], Y[after eq 1], Z[appendix A]). Indeed, I neglect the latent heat of fusion in the main derivation. I now discuss the impact of latent heat of fusion in Appendix B (Line X-Y). Including the latent heat of fusion introduces a secondary peak in warming due to the additional heat released from fusion (see new Fig.~B1a). This secondary peak only interacts with the surface temperature of the primary peak in the lower troposphere ($p<500$~hPa, new Fig.~Fig.~B1b). This effect is greatest (a shift in peak $T_s$ 6.03~K) at 727~hPa. I include these discussions in the new Appendix B. Since fusion represents a secondary effect and complicates analytical treatment, I choose to neglect it in the main text.}
+\par
+equation 9: You are trying to find an expression for gamma\_m, but the result involves gamma\_m which is thus not satisfactory! Furthermore, when you take a T\_s derivative, the results will involve dgamma\_m/dTs which is what you are trying to find. You could instead bring all cases of gamma\_m to the left hand side. This will result in a standard expression for gamma\_m that involves q\_s in the numerator and denominator (see e.g. the expression for the pseudo moist adiabatic lapse rate in the moist variables appendix in the Holton and Hakim textbook). Presumably then the non-monotonicity results from a competition between q\_s in the numerator and denominator.
+\par
+\textbf{I agree that this was a key weak point in the original manuscript. I rewrote the entire section explaining the source of the non-monotonicity (Section~2) starting with the standard expression for $\Gamma_m$ (new Eq.~13). The terms $\alpha_L$ and $c_L$ in this equation include derivatives of $q^*$ that you mentioned (new Eq.~11 and 12). I then explain why $\Gamma_m$ is non-monotonic in local temperature $T$ based on the functional form of the moist adiabatic lapse rate (new Eq.~17 and lines 97--105) and systematically derive the condition for the extremum in $\partial\Gamma_m/\partial T$ (line 111--148). The competition arises from the partitioning of the two limiting factors that control condensation: 1) the availability of water vapor and 2) adiabatic cooling. At low $T$, moist adiabatic warming increases with $T$ because the availability of water vapor limits condensation, while at high $T$, moist adiabatic warming decreases with $T$ because with each additional warming there is a diminishing fraction of adiabatic cooling that is available to be offset from latent heating. This competition leads moist adiabatic warming to peak when these two factors are equally limiting, i.e. $c_L = c_{pd}$.}
+\par
+line 202: The dependence on T\^{}2 is emphasized but you also found a dependence on gamma\_m. You should show that the T\^{}2 term is more important than the gamma\_m term to support this.
+\par
+\textbf{The new explanation no longer relies on the $1/T^2$ dependence or the circular dependence on $\Gamma_m$. Please see my response to the previous comment.}
+\par
+line 206: Can you provide or cite evidence from convection resolving simulations or observations that buoyancy and updraft velocity are non-monotonic functions of initial surface temperature? For example, Singh and O'Gorman, QJRMS, 2015 show a hint on non-monotonicity of updraft velocity but it is confined below 900hPa. If there is not support for this, then you need to say that with a number of major approximations you find non-monotonic behavior of B and w but this needs to be confirmed.
+\par
+\textbf{I analyzed updraft velocities exceeding the 99.9th percentile at each level in 9 RCEMIP simulations to evaluate whether updraft velocity is a robustly non-monotonic function of surface temperature. Cloud resolving models qualitatively support the findings from the zero buoyancy plume model, with all but one model (SAM) exhibiting non-monotonicity in updraft velocity with surface temperature (new Fig.~8, line 255--270). I also acknowledge that the diversity of updraft velocity responses in RCEMIP models suggests that model details such as parameterizations of cloud microphysics, radiative transfer, and turbulence that are not represented in the simple zero-buoyancy plume model play an important role in shaping the quantitative details of the updraft velocity profile (line 265-268). Nonetheless, the presence of non-monotonicity and a shift toward increasingly top-heavy updraft velocity profiles in RCEMIP models suggest that the underlying mechanism controlling non-monoticity in moist adiabatic warming may be playing a role in shaping the sensitivity of updraft velocity to surface temperature in models that explicitly resolve convective storms.}
+\par
+\textbf{In addition to the analysis above I now reference Singh and O'Gorman (2015) in the discussion of the non-monotonicity of vertical velocity (line X) and Seeley and Romps (2015) who show that buoyancy varies non-monotonically with surface temperature (line Y, see their Fig.~2a).}
+
+\subsection{Minor comments}
+
+line 8 and throughout the paper: ``change in temperature along a moist adiabat is surprisingly non-monotonic with surface temperature''. This is unclear as stated. What you mean is that it is non-monotonic with variations in initial surface temperature (or control-climate surface temperature). This should be clarified here and throughout the paper. Otherwise the reader may naturally think you mean non-monotonic as the surface temperature increases from control temperature to +4K which doesn't make sense.
+\par
+\textbf{I replaced all instances of ``surface temperature'' that appear in the context of describing the non-monotonicity in warming aloft in response to a $4$~K surface warming to refer to the non-monotonicity with respect to ``initial surface temperature'' throughout the paper. For discussions involving non-monotonicity of derivatives (e.g., $d\Gamma_m/dT_s$) and climatological profiles (buoyancy and vertical velocity) I continue to use ``surface temperature'' since there is no ambiguity in those contexts.}
+\par
+line 20 ``The Clausius-Clapeyron relation describes...'':  change ``describes'' to ``implies'' (The CC relation in itself is not a property of air or the atmosphere)
+\par
+\textbf{I changed ``describes'' to ``implies'' as suggested (line X).}
+\par
+line 24: Fig 1 shows the column water vapor which is not in any way the ``total latent heat released from convection''.
+\par
+\textbf{Thank you for catching this error. In a moist adiabatic atmosphere, the total latent heat released from convection is $L_v(q_s^*-q_\mathrm{top}^*)$ where $L_v$ is the latent heat of vaporization, $q_s^*$ is surface saturation specific humidity, and $q_\mathrm{top}^*$ is the cloud top saturation specific humidity. Thus total latent heat release to first order scales as $q_s^*$, not column water vapor as I originally implied. I now explain the assumptions involved in using $q_s^*$ as a proxy for total latent heat release (line Y) and now show $q_s^*$ vs $T_s$ in the new Fig.~(1).}
+\par
+line 34: Again ``total latent heating'' is not appropriate here
+\par
+\textbf{This is now revised to surface specific humidity (line Y).}
+\par
+line 39: Interestingly, this non-monotonicity of the moist adiabat also affects the land-ocean warming contrast: see page 4003 of Byrne and O'Gorman, 2013 (DOI: 10.1175/JCLI-D-12-00262.1)
+\par
+\textbf{Thank you for bringing this to my attention. I now reference Byrne and O'Gorman (2013) in the introduction when pointing out that previous work has shown the existence of this non-monotonicity (line X).}
+\par
+line 46: ``as a function of initial surface temperature'' or ``as a function of control climate surface temperature'' (and similarly throughout paper)
+\par
+\textbf{As mentioned above, I replaced instances of ``surface temperature'' that appear in the context of describing the non-monotonicity in warming aloft in response to a $4$~K surface warming to refer to the non-monotonicity with respect to ``initial surface temperature'' throughout the paper.}
+\par
+line 81: ``increase in water vapor''-> ``increase in specific humidity'' (whether there is an increase depends on how water vapor is measured)
+\par
+\textbf{This sentence was removed in the revised manuscript.}
+par
+line 145: I take it the assumption of the environment follows an entraining lapse rate whereas the parcel does not is following the general approach of the zero-buoyancy plume (e.g. Singh and O'Gorman, GRL, 2013)
+\par
+\textbf{Correct. I now explicitly reference the zero-buoyancy plume mode (Singh and O'Gorman, 2013) when assuming the environment follows an entraining plume (line X).}
+\par
+line 173: Eq 27 seems to be a linear equation in w\^{}2 rather than a nonlinear equation. You could instead say that solutions to Eq 27 depend nonlinearly on B.
+\par
+\textbf{This sentence was removed in the revised manuscript.}
+\par
+appendix: The text of the appendix should be cited somewhere in the main part of the paper
+\par
+\textbf{I now reference all Appendixes in the main text (line X).}
+\par
+\section{Reviewer \#2}
+\subsection{Summary:}
+In this manuscript, the author discusses how tropospheric temperature responds to change in surface temperature non-monotonically, when driven by deep convection. The author then discusses the implication of these changes on the buoyancy and vertical updraft energy of air-parcels lifted by deep convection.
+
+Specifically, the amount of temperature increase at various levels of the troposphere and in response to a unit change in surface temperature is found to be non-monotonic with surface temperature. This sensitivity is such that tropospheric temperature increase in response to a unit surface temperature change is maximum at a specific surface temperature, with the response being smaller at colder or warmer surface temperature values. The author also shows that the surface temperature value that maximizes the tropospheric temperature response is different for different tropospheric levels. The author then concludes by demonstrating that, in ideal scenarios, the non-monotonic changes in the lapse rate implies non-monotonic changes in other important properties of convective air parcels, namely their buoyancy and the kinetic energy of their updraft.
+
+Apart from some minor issues, I find this study interesting and worthwhile publishing. While the non-monotonic changes in the lapse rate is not a novel finding, as pointed out by the author, the mechanism put forward by the author to explain it (i.e., linking this non-monotonic behavior to a compensation between the temperature and pressure dependence of saturated specific humidity) is novel. Furthermore, its implications on the buoyancy and energetics of convective air parcels is original and, in my opinion, a substantial departure from previous mechanisms proposed to explain those properties.
+
+\textbf{Based on the feedback from reviewers 1 and 3 I rederived the source of the non-monotonicity in moist adiabatic warming based on the standard expression for the moist adiabatic lapse rate (new Eq.~13) and systematically derive the condition for the extremum in $\partial\Gamma_m/\partial T$ (line 111--148). Interestingly, the criteria for the non-monotonicity in moist adiabatic warming $c_L=c_{pd}$, where $c_L=L_v\partial q^* / \partial T$, is the criteria that Seeley and Romps (2016) and Romps (2016) found for explaining the top-heavy structure of buoyancy and the non-monotonicity of buoyancy with surface temperature. However, the same criteria emerge independently from two different equations (sensitivity of moist adiabatic lapse rate to warming vs the temperature difference between an entraining and undiluted parcel derived from the difference in entraining and undilute moist static energy). The derivation for the non-monotonicity in buoyancy that I present in the revised manuscript further improves on Romps (2016) because it captures the role of the entrainment parameter $a$ on the criteria for peak buoyancy $c_L=c_{pd}\sqrt{1+a}$ (see new Fig.~6c).}
+
+\subsection{Some minor comments:}
+
+L. 22, 24, 34: I don't think that `latent heat release' is the correct term to use here. Rather, I think that `saturated water vapor content' or perhaps `precipitable water' would be appropriate. The term ``latent heat release'' should be reserved to the process of phase change itself, which is not what is shown on Fig.1 and isn't even directly discussed in this paper. Changes in latent heat release are more directly connected to changes in the radiative balance of the atmosphere, which is not the focus of this paper.
+\par
+\textbf{My original point of showing change in column water vapor as an explanation for the expected monotonicity in latent heat release with surface temperature was flawed as Reviewer 1 pointed out. I now show surface specific humidity vs surface temperature in the new Fig.~1a and explain how surface specific humidity is a proxy for total latent heat release from convection under the assumption of a moist adiabatic atmosphere (line X-Y).}
+\par
+\textbf{I argue that latent heat release is still an appropriate term to use in the context of this paper. The difference between the dry and moist adiabatic lapse rate is entirely due to the latent heat of condensation (and fusion if freezing is considered). Thus understanding why the moist adiabatic lapse rate varies non-monotonically with surface temperature is equivalent to understanding why the latent heat release from convection varies non-monotonically with surface temperature.}
+\par
+\textbf{I agree that processes such as radiative cooling place an important constraint on latent heat released from convection (as we know from the fact that precipitation scales at 2\%~K$^{-1}$). I acknowledge the importance of these processes that are neglected in a moist adiabat when motivating the question about whether the vertical velocity profiles predicted from the zero-buoyancy plume model are applicable to the real atmosphere (line X).}
+\par
+L. 31: “(...) because it increases [dry] atmospheric static stability” I suggest precising `dry', in contrast to `moist static stability', which does not increase monotonically with height.
+\par
+\textbf{I agree with your suggestion. I now specify dry static stability (line X).}
+\par
+L. 32: ``(...) which [whose spatial structure] influences convection the organization of the tropospheric dynamics [in the tropics] (Neelin and Held 1987).'' I'm suggesting changes that may be more in line with NH87's argument. Note however that NH87 argument is based on the gross moist static stability, which differs from dry static stability.
+\par
+\textbf{Dry static stability still plays a role because it is a part of the definition of gross moist stability (Eq.~3.2 in Neelin and Held 1987). Spatial variations in the dry static stability response influences the position of convergence zones because horizontal free-tropospheric temperature gradients, while weak, exist (Bao et al. 2022). I now clarify this point (line X).}
+\par
+L. 66: ``the first law of thermodynamics for a [adiabatic, non-precipitating, reversible] saturated, ascending air parcel, which is equivalent to the conservation of Moist Static Energy (MSE)''. I think it is important to specify that we're dealing with an idealized set of conditions.
+\par
+\textbf{I agree that it's important to more explicitly state the assumptions involved. I rephrased this sentence following your suggestion (line X).}
+\par
+L. 67: In equation 4 and other places in the text, I would suggest using a different subscript than `s' for saturated specific humidity, to differentiate it better from the surface subscript used for surface temperature. For instance, you could use subscript `sat' (qsat), or a superscript `*' (q*).
+\par
+\textbf{I agree that using the same subscript for surface and saturation was confusing. I now use $q^*$ for saturation specific humidity throughout the manuscript.}
+\par
+L. 79: ``the sum of a Cooling [Temperature] Term and a Pressure Term''. For consistency, I would either use the term pairing `Cooling'-`Warming' or `Temperature'-`Pressure'.
+\par
+\textbf{This sentence was removed in the revised manuscript.}
+\par
+L. 80: ``The Cooling Term represents the decrease in water vapor due to the parcel cooling as it rises and expands''. Here, you're referring to a partial derivative evaluated at constant pressure.
+\par
+\textbf{This sentence was removed in the revised manuscript.}
+\par
+\subsection{Suggestion for further analysis:}
+\par
+L. 232: There are other empirical definitions for saturated vapor pressure that are considered to be more accurate than Bolton, in particular Goff–Gratch and Murphy-Koop formula. I'd be curious to know whether using a different definition would impact the non-monotonic behavior in a significant way (e.g., is the peak warming occurring at the same temperature?)
+\par
+\textbf{I analyzed the sensitivity of the non-monotonicity to the choice of the saturation vapor pressure formula by comparing the results using Bolton (1980), Goff-Gratch (1946), and Murphy-Koop (2005). The peak warming temperature varies by less than 0.34~K across different $e^*$ formula (new Fig.~C1, new Appendix C). Thus the choice of saturation vapor pressure formula does not significantly impact the non-monotonic behavior. I now mention this in the revised introduction (line x).}
+\par
+\section{Reviewer \#3}
+
+This short paper notes that the moist adiabatic amplification of tropospheric warming relative to the surface is non-monotonic in surface temperature Ts. The paper furthermore seeks to explain this in terms of the basic thermodynamics of the moist adiabat, and in particular the separate pressure and temperature dependence of saturation specific humidity qs.
+
+This is a nice idea, and I think there is room in the literature to deepen our understanding of the moist adiabat. At the same time, I felt that the submitted manuscript fell short of this goal in a few ways, which I detail below. If it is possible to address these concerns, however, this paper could then make a nice addition to the literature.
+
+Nadir Jeevanjee \\
+Geophysical Fluid Dynamics Laboratory
+
+\textbf{I agree with your assessment that the original manuscript fell short of fully explaining the source of the non-monotonicity in moist adiabatic warming. Based on the same feedback from Reviewer 1, I rederived the source of the non-monotonicity in moist adiabatic warming based on the explicit expression of the moist adiabatic lapse rate (new Eq.~13) and systematically derive the condition for the extremum in $\partial\Gamma_m/\partial T$ (line 111--148). I hope that this new derivation addresses your concerns.}
+
+\subsection{Major Comments}
+
+1. The author is trying explain how the moist lapse rate Gamma\_m depends on Ts, and does this by writing d Gamma\_m/dTs in terms of dqs/dz, which is then itself written in terms of  Gamma\_m in Eqs. (10) and (15)! This feels somewhat circular.
+\par
+\textbf{\textbf{I agree that the circularity of the $d\Gamma_m/dT_s$ expression in the original manuscript limits the interpretability of the results. I rewrote the entire section explaining the source of the non-monotonicity (Section~2) starting with an explicit expression for $\Gamma_m$ (new Eq.~13). I then explain why $\Gamma_m$ is non-monotonic in local temperature $T$ based on the functional form of the moist adiabatic lapse rate (new Eq.~17 and lines 97--105) and systematically derive the condition for the extremum in $\partial\Gamma_m/\partial T$ (line 111--148). The competition arises from the partitioning of the two limiting factors that control condensation: 1) the availability of water vapor and 2) adiabatic cooling. At low $T$, moist adiabatic warming increases with $T$ because the availability of water vapor limits condensation, while at high $T$, moist adiabatic warming decreases with $T$ because with each additional warming there is a diminishing fraction of adiabatic cooling that remains available to be offset by latent heating. This competition leads moist adiabatic warming to peak when these two factors are equally limiting, i.e. $c_L = c_{pd}$, where $c_L=L_v\partial q^*/\partial T$.}}
+\par
+2. Furthermore, it is noted in lines 107-108 that this Gamma\_m dependence is important, but this is never quantified and is later ignored in lines 200-204 and the caption to Fig. 4. I would in fact suspect that the Gamma\_m dependence is key to the sensitivity of the cooling prefactor to Ts in the upper troposphere in Fig. 4a, as  Gamma\_m will vary there from dry adiabatic values at Ts=280 to roughly half that at Ts=310, which is a factor of 2 difference, whereas T will only vary by a few tens of percent.
+\par
+\textbf{As I explain above, the new derivation no longer includes an implicit dependence on $\Gamma_m$.}
+\par
+3. The author notes that their perspective must be equivalent to that of Romps 2016, which explains the decline in upper tropospheric warming as due to warming parcels retaining more of their latent heat and thus not expressing their change in surface enthalpy through sensible heat. Could the author more explicitly (perhaps analytically?) show how these perspectives are equivalent?
+\par
+\textbf{The new criteria I derive for the non-monotonicity in moist adiabatic warming $c_L=c_{pd}$, where $c_L=L_v\partial q^* / \partial T$, is the same criteria that Seeley and Romps (2016) and Romps (2016) found for explaining the top-heavy structure of buoyancy and the non-monotonicity of buoyancy with surface temperature. However, the same criteria emerge independently from two different equations (sensitivity of moist adiabatic lapse rate to warming $\partial \Gamma_m / \partial T$ vs the temperature difference between an entraining and undiluted parcel derived from the difference in entraining and undilute moist static energy). The derivation for the non-monotonicity in buoyancy that I present in the revised manuscript further improves on Romps (2016) by including the role of the entrainment parameter $a$ on the criteria for peak buoyancy $c_L=c_{pd}\sqrt{1+a}$ (see new Fig.~6c).}
+\par
+4. The author spends several figures (Figs. 5-8) on the implication that vertical velocities should change non-monotonically as a function of Ts, but I'm not sure this result warrants that much emphasis. Is there any evidence of such non-monotonicity anywhere else in the literature, e.g. from cloud-resolving simulations?
+\par
+\textbf{I analyzed updraft velocities exceeding the 99.9th percentile at each level in 9 RCEMIP simulations to evaluate whether updraft velocity is a robustly non-monotonic function of surface temperature. Cloud resolving models qualitatively support the findings from the zero-buoyancy plume model, with all but one model (SAM) exhibiting non-monotonicity in updraft velocity with surface temperature (new Fig.~8, line 255--270). The presence of non-monotonicity and a shift toward increasingly top-heavy updraft velocity profiles in RCEMIP models suggest that the underlying mechanism controlling non-monoticity in moist adiabatic warming may be playing a role in shaping the sensitivity of updraft velocity to surface temperature in models that explicitly resolve convective storms.}
+\par
+\textbf{In addition to the analysis above I now reference Singh and O'Gorman (2015) in the discussion of the non-monotonicity of vertical velocity (line X, see their Fig.~2) and Seeley and Romps (2015) who show that buoyancy varies non-monotonically with surface temperature (line Y, see their Fig.~2a).}
+\par
+5. The regime in which d Gamma\_m /dTs is decreasing with Ts seems perhaps related to the ``moist greenhouse'' regime, in which qs does not decline significantly with height (e.g. Wordsworth and Pierrehumbert 2013, ApJ, see their Fig. 2). If true this would be a nice connection to make.
+\par
+\textbf{}
+
+\end{document}
