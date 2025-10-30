@@ -1,0 +1,322 @@
+%% Version 7.1, 1 September 2021
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% amspaperV6.tex --  LaTeX-based instructional template paper for submissions to the 
+% American Meteorological Society
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PREAMBLE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Start with one of the following:
+% 1.5-SPACED VERSION FOR SUBMISSION TO THE AMS
+\documentclass{ametsocV6.1}
+
+% TWO-COLUMN JOURNAL PAGE LAYOUT---FOR AUTHOR USE ONLY
+% \documentclass[twocol]{ametsocV6.1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% To be entered by author:
+
+%% May use \\ to break lines in title:
+
+\title{The non-monotonicity of moist adiabatic warming}
+
+%% Enter authors' names and affiliations as you see in the examples below.
+%
+%% Use \correspondingauthor{} and \thanks{} (\thanks command to be used for affiliations footnotes, 
+%% such as current affiliation, additional affiliation, deceased, co-first authors, etc.)
+%% immediately following the appropriate author.
+%
+%% Note that the \correspondingauthor{} command is NECESSARY.
+%% The \thanks{} commands are OPTIONAL.
+%
+%% Enter affiliations within the \affiliation{} field. Use \aff{#} to indicate the affiliation letter at both the
+%% affiliation and at each author's name. Use \\ to insert line breaks to place each affiliation on its own line.
+
+\authors{Osamu Miyawaki\aff{a}\correspondingauthor{Osamu Miyawaki, miyawako@union.edu}}
+
+\affiliation{\aff{a}{Department of Geosciences, Union College, Schenectady New York, USA}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ABSTRACT
+%
+% Enter your abstract here
+% Abstracts should not exceed 250 words in length!
+%
+
+\abstract{The moist adiabat is a useful first-order approximation of the tropical stratification and thus governs fundamental properties of climate such as the static stability and the lapse rate feedback. While total atmospheric latent heating increases monotonically with warming, the resulting change in temperature along a moist adiabat is surprisingly non-monotonic with surface temperature. This phenomenon has lacked a physical explanation. This paper presents a thermodynamic explanation by decomposing the sensitivity of the moist adiabatic lapse rate into two competing components: 1) A Cooling Term arising from the partial derivative of saturation specific humidity with respect to temperature ($\partial q_s/\partial T$), which is proportional to $q_s/T^2$ via the Clausius-Clapeyron relation, and 2) a Pressure Term arising from the partial derivative with respect to pressure ($\partial q_s/\partial p$), which is proportional to $q_s/p$. The non-monotonicity arises because while both terms grow with temperature due to the exponential increase of saturation specific humidity ($q_s$), the $1/T^2$ prefactor on the Cooling Term suppresses its growth more strongly than the pressure-related prefactor on the Pressure Term. This mechanism also explains the non-monotonic behavior of convective buoyancy and vertical velocity.}
+
+\begin{document}
+
+
+%% Necessary!
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MAIN BODY OF PAPER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\section{Introduction}
+
+The Clausius-Clapeyron relation describes the potential for a warmer atmosphere to hold more water vapor \citep{emanuel1994}. This principle is the basis for the positive water vapor feedback, first quantified in early climate models \citep{manabe1967}, and for an increase in the latent heat released during convection as the climate warms. Consistent with these principles, the total latent heat released from convection increases monotonically with surface temperature (Fig.~\ref{fig:fig-1}a).
+
+In the tropics, convection couples the surface with the free troposphere. Although processes like convective entrainment influence the details of this coupling \citep{miyawaki2020}, moist adiabatic adjustment serves as a useful first-order approximation \citep{held1993}. The top-heavy warming profile predicted by moist adiabatic adjustment (Fig.~\ref{fig:fig-1}b) is a robust feature in climate models and observations, despite historical challenges in observational records \citep{vallis2015, santer2005}.
+
+This warming profile is important because it increases atmospheric static stability, which influences convection \citep{neelin1987}. This structure also defines the tropical lapse rate feedback, a key negative feedback for global climate sensitivity \citep{hansen1984}. Given the monotonic increase in total latent heating (Fig.~\ref{fig:fig-1}a), one might expect moist adiabatic warming to also be monotonic with surface temperature at all heights. However, it is a non-monotonic function of surface temperature at a fixed height (Fig.~\ref{fig:fig-1}c). This non-monotonicity is independent of the vertical coordinate (Fig.~\ref{fig:fig-a1}). While \citet{levine2016} showed this non-monotonicity and its influence on zonal stationary circulations, a physical explanation for the non-monotonicity in moist adiabatic warming currently does not exist in the literature.
+
+This raises the question: What physical mechanism drives this non-monotonic warming? This paper presents a thermodynamic explanation for the origins of non-monotonicity in moist adiabatic warming and its cascading effects on other convective properties. Section 2 develops the theory of non-monotonic warming. Section 3 explores the implications of this non-monotonicity for the dynamics of moist convection. Section 4 provides a summary and discussion.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=0.4\textwidth]{fig-1.png}\\
+ \caption{(a) The change in column-integrated saturation specific humidity ($\Delta q_s$) resulting from a 4 K surface warming as a function of surface temperature ($T_s$). (b) Vertical profiles of the moist adiabatic temperature response ($\Delta T$) to a 4 K surface warming for $T_s = $ 280, 290, 300, 310, and 320 K. (c) The warming ($\Delta T$) at 5, 10, 15, and 20 km as a function of $T_s$, showing a non-monotonic response where warming peaks at an intermediate temperature.}\label{fig:fig-1}
+\end{figure}
+
+\section{Theory of Non-Monotonic Warming}
+The non-monotonic relationship between upper-tropospheric warming and surface temperature (Fig.~\ref{fig:fig-1}) can be explained by analyzing the sensitivity of the moist adiabatic lapse rate, $\Gamma_m$, to changes in surface temperature, $T_s$. To illustrate this, we start by defining the temperature profile, $T(z)$, in terms of its surface value, $T(0)$, and the lapse rate, $\Gamma(z)=-dT/dz$:
+\begin{equation}
+T(z)=T(0)-\int_0^z \Gamma(z')dz' \label{eq:temp_profile}
+\end{equation}
+We apply Eq.~(\ref{eq:temp_profile}) to a base state with surface temperature $T_s$ and a perturbed state with surface temperature $T_s + \Delta T_s$. The warming at any height, $\Delta T(z)$, is the difference between these two profiles, $\Delta T(z) = T_{\text{pert}}(z) - T_{\text{base}}(z)$, which yields:
+\begin{equation}
+\Delta T(z)=\Delta T_s-\int_0^z\Delta \Gamma(z')dz' \label{eq:delta_t_simple}
+\end{equation}
+where $\Delta \Gamma = \Gamma_{\text{pert}} - \Gamma_{\text{base}}$. For a small perturbation, the change in the lapse rate, $\Delta\Gamma$, can be approximated using a first-order Taylor expansion: $\Delta\Gamma\approx \frac{d\Gamma_m}{dT_s} \Delta T_s$. Substituting this into Eq.~(\ref{eq:delta_t_simple}) gives:
+\begin{equation}
+\Delta T(z)\approx\Delta T_s-\left(\int_0^z\frac{d\Gamma_m}{dT_s}dz'\right)\Delta T_s \label{eq:delta_t_taylor}
+\end{equation}
+This establishes that the vertical structure of the warming anomaly (i.e., its deviation from the uniform surface warming) is controlled by the vertical integral of $d\Gamma_m/dT_s$, the sensitivity of the lapse rate to the surface temperature. Therefore, understanding the physical mechanisms that determine this sensitivity is the key to explaining the non-monotonicity of moist adiabatic warming.
+
+We begin by deriving an expression for the moist adiabatic lapse rate from the first law of thermodynamics for a saturated, ascending air parcel, which is equivalent to the conservation of Moist Static Energy (MSE):
+\begin{equation}
+c_p dT+gdz+L_v dq_s=0 \label{eq:mse_conservation}
+\end{equation}
+Here, $c_p$ is the specific heat capacity of dry air, $g$ is the acceleration due to gravity, $z$ is height, $L_v$ is the latent heat of vaporization, and $q_s$ is the saturation specific humidity. To find the moist adiabatic lapse rate, $\Gamma_m=-dT/dz$, we divide Eq.~(\ref{eq:mse_conservation}) by $dz$:
+\begin{equation}
+c_p \frac{dT}{dz}+g+L_v\frac{dq_s}{dz}=0 \label{eq:mse_dz}
+\end{equation}
+Substituting $dT/dz=-\Gamma_m$ and solving for $\Gamma_m$ yields:
+\begin{equation}
+\Gamma_m=\frac{g}{c_p}+\frac{L_v}{c_p}\frac{dq_s}{dz}=\Gamma_d+\frac{L_v}{c_p}\frac{dq_s}{dz} \label{eq:gamma_m}
+\end{equation}
+where $\Gamma_d$ is the dry adiabatic lapse rate. For simplicity, and following common theoretical practice, $\Gamma_d$, $L_v$, and $c_p$ are assumed to be constant. Then the sensitivity of the lapse rate to surface temperature is controlled entirely by the sensitivity of the vertical moisture gradient:
+\begin{equation}
+\frac{d\Gamma_m}{dT_s}=\frac{L_v}{c_p}\frac{d}{dT_s}\left(\frac{dq_s}{dz}\right) \label{eq:gamma_sensitivity}
+\end{equation}
+We can decompose the moisture gradient, $dq_s/dz$, into two components using the chain rule, as $q_s$ is a function of temperature $T$ and pressure $p$:
+\begin{equation}
+\frac{dq_s}{dz}=\frac{\partial q_s}{\partial T}\frac{dT}{dz}+\frac{\partial q_s}{\partial p}\frac{dp}{dz} \label{eq:dqs_dz_chain}
+\end{equation}
+Substituting the definitions of the moist lapse rate ($dT/dz=-\Gamma_m$) and hydrostatic balance ($dp/dz=-\rho g$, where $\rho$ is the density of air) allows the moisture gradient to be expressed as the sum of a Cooling Term and a Pressure Term:
+\begin{equation}
+\frac{dq_s}{dz} = \underbrace{-\Gamma_m\frac{\partial q_s}{\partial T}}_{\text{Cooling Term}} + \underbrace{\left(-\rho g\frac{\partial q_s}{\partial p}\right)}_{\text{Pressure Term}} \label{eq:dqs_dz_terms}
+\end{equation}
+The Cooling Term represents the decrease in water vapor due to the parcel cooling as it rises and expands. The Pressure Term represents the increase in water vapor due to the decrease in ambient pressure as the parcel rises. Substituting this decomposition back into Eq.~(\ref{eq:gamma_sensitivity}) allows us to decompose the total sensitivity, $d\Gamma_m/dT_s$, into the sum of contributions from these two terms. They have opposing effects on the total sensitivity (Fig.~\ref{fig:fig-2}). The Cooling Term acts to decrease $\Gamma_m$ with warming (Fig.~\ref{fig:fig-2}b), while the Pressure Term acts to increase $\Gamma_m$ with warming (Fig.~\ref{fig:fig-2}c).
+
+The opposing effects of these two terms on the lapse rate translate into competing contributions to the overall warming profile. Integrating the Cooling Term's sensitivity reveals a warming contribution that amplifies monotonically with increasing $T_s$ at all heights (Fig.~\ref{fig:fig-3}a, \ref{fig:fig-3}b). In contrast, integrating the Pressure Term's sensitivity reveals a contribution that acts to cool the atmosphere relative to the surface, and this cooling effect becomes stronger as $T_s$ increases (Fig.~\ref{fig:fig-3}c, \ref{fig:fig-3}d). Physically, this occurs because a decrease in ambient pressure favors the vapor phase over condensed phases, which means the Pressure Term contributes to a decrease in latent heat release from condensation compared to a hypothetical alternative where temperature were to decrease without a corresponding decrease in pressure. The total warming anomaly, $\Delta T_{\text{anomaly}}(z)=\Delta T(z)-\Delta T_s$, is the sum of these two opposing effects:
+\begin{align}
+\Delta T_{\text{cool}}(z) &\approx - \Delta T_s \int_0^z \frac{d}{dT_s}\left(\frac{L_v}{c_p}\left(-\Gamma_m \frac{\partial q_s}{\partial T}\right)\right) dz' \label{eq:delta_t_cool} \\
+\Delta T_{\text{pres}}(z) &\approx - \Delta T_s \int_0^z \frac{d}{dT_s}\left(\frac{L_v}{c_p}\left(-\rho g \frac{\partial q_s}{\partial p}\right)\right) dz' \label{eq:delta_t_pres} \\
+\Delta T_{\text{anomaly}}(z) &= \Delta T_{\text{cool}}(z) + \Delta T_{\text{pres}}(z) \label{eq:delta_t_anomaly}
+\end{align}
+The non-monotonic behavior of moist adiabatic warming is thus a consequence of the competition between these two opposing effects.
+
+The reason for the eventual dominance of the Pressure Term's temperature sensitivity lies in its temperature scaling relative to the Cooling Term. We can approximate the partial derivatives of specific humidity using the Clausius-Clapeyron relation and the ideal gas law:
+\begin{align}
+\frac{\partial q_s}{\partial T}&\approx q_s\frac{L_v}{R_v T^2} \label{eq:dqs_dt_approx} \\
+\frac{\partial q_s}{\partial p}&\approx -\frac{q_s}{p} \label{eq:dqs_dp_approx}
+\end{align}
+where $R_v$ is the gas constant for water vapor. Substituting these approximations into Eq.~(\ref{eq:dqs_dz_terms}) gives:
+\begin{equation}
+\frac{dq_s}{dz} \approx-\Gamma_m\left(q_s\frac{L_v}{R_v T^2}\right)-\rho g\left(-\frac{q_s}{p}\right) \approx -q_s\left(\Gamma_m\frac{L_v}{R_v T^2}\right)+q_s\left(\frac{\rho g}{p}\right) \label{eq:dqs_dz_approx}
+\end{equation}
+Using the ideal gas law for moist air, $p\approx\rho R_d T_v$ (where $T_v$ is the virtual temperature), the pressure-related term in Eq.~(\ref{eq:dqs_dz_approx}) can be rewritten:
+\begin{equation}
+\frac{dq_s}{dz} \approx -q_s \left(\frac{\Gamma_m L_v}{R_v T^2}\right) + q_s \left(\frac{g}{R_d T_v}\right) \label{eq:dqs_dz_prefactors}
+\end{equation}
+Both terms scale with the saturation specific humidity, $q_s$, which increases exponentially with temperature. However, they are also multiplied by prefactors with different temperature dependencies.
+
+The Cooling Term is modulated by a prefactor that scales as $1/T^2$. This dampens the exponential increase in the Cooling Term with surface warming. $\Gamma_m$ in the numerator of the Cooling Term prefactor further modulates the exponential increase because $\Gamma_m$ decreases with warming. The Pressure Term is modulated by a prefactor that scales as $1/T_v$. Thus the Pressure Term prefactor is a weaker function of temperature than the Cooling Term prefactor (Fig.~\ref{fig:fig-4}). Consequently, as $T_s$ rises, the rapid decay of the Cooling Term's prefactor mutes the effect of increasing $q_s$ relative to the Pressure Term. This allows the Pressure Term's influence on the lapse rate to eventually catch up to that of the Cooling Term. The differing sensitivities of these two terms to temperature cause the warming to first strengthen and then weaken with $T_s$.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=0.4\textwidth]{fig-2.png}\\
+ \caption{The sensitivity of the moist adiabatic lapse rate to a change in surface temperature, $\partial\Gamma_m/\partial T_s$, exhibits a non-monotonic structure as a function of height and temperature (a). This structure arises from the competition between two opposing physical effects. The Cooling Term (b), which represents the effect of condensation from adiabatic cooling, is a negative contribution at all temperatures. The Pressure Term (c), which represents the effect of decreasing pressure with height, is a positive contribution. The non-monotonicity of the total sensitivity arises because the positive contribution from the Pressure Term grows more rapidly with $T_s$ than the negative contribution from the Cooling Term.}\label{fig:fig-2}
+\end{figure}
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=\textwidth]{fig-3.png}\\
+ \caption{Warming is decomposed into contributions from the Cooling Term and the Pressure Term. (a) The vertical profile of the warming contribution from the Cooling Term for select $T_s$. (b) The warming contribution from the Cooling Term at fixed heights as a function of surface temperature. This term provides a warming effect that increases monotonically with temperature. (c) The vertical profile of the relative cooling contribution from the Pressure Term. (d) The relative cooling from the Pressure Term at fixed heights. Both the Cooling and Pressure terms become stronger as the surface temperature increases.}\label{fig:fig-3}
+\end{figure}
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=\textwidth]{fig-4.png}\\
+ \caption{The (a) Cooling Prefactor, $\Gamma_m L_v / (R_v T^2)$, and (b) Pressure Prefactor, $g/(R_d T_v)$, as a function of height and surface temperature. The Cooling Prefactor weakens strongly with temperature due to its $1/T^2$ dependence. In contrast, the Pressure Prefactor weakens more slowly due to its $1/T_v$ dependence.}\label{fig:fig-4}
+\end{figure}
+
+
+\section{Implications of non-monotonicity in moist adiabatic warming on convection}
+The non-monotonic warming of a moist adiabat has implications for the dynamics of convection. For example, \cite{romps2016} showed that parcel buoyancy at the tropopause is a non-monotonic function of surface temperature. Romps' explanation is that as surface temperature increases the parcel's enthalpy anomaly is increasingly partitioned into a latent enthalpy (moisture) anomaly rather than a sensible enthalpy (temperature) anomaly. Since buoyancy is driven by the temperature anomaly between the rising parcel and its environment, the shift from sensible to latent enthalpy anomaly with warming leads to the tropopause buoyancy and thus CAPE to peak at an intermediate temperature. Here, we provide an alternative perspective of the non-monotonicity in buoyancy based on the sensitivity of the vertical moisture gradient ($\frac{dq_s}{dz}$) to warming.
+
+We model buoyancy ($B$) as the normalized virtual temperature difference between a non-entraining parcel ($T_{v,p}$) and the environment ($T_{v,e}$). For simplicity, we will use standard temperature:
+\begin{equation}
+B(z)\approx\frac{g}{T_e(z)}(T_p(z)-T_e(z)) \label{eq:buoyancy_def}
+\end{equation}
+As before, we express temperature profiles in terms of $T_s$ and the integral of their respective lapse rates. We assume the parcel follows a moist adiabatic lapse rate, $\Gamma_m$, while the environment follows an entraining lapse rate, $\Gamma_e$.
+\begin{align}
+T_p(z)&=T_s-\int_0^z \Gamma_m(z')dz' \label{eq:Tp_profile} \\
+T_e(z)&=T_s-\int_0^z \Gamma_e(z')dz' \label{eq:Te_profile}
+\end{align}
+Substituting Eq.~(\ref{eq:Tp_profile}) and (\ref{eq:Te_profile}) into the definition of buoyancy (Eq.~\ref{eq:buoyancy_def}) yields:
+\begin{equation}
+B(z)\approx\frac{g}{T_e(z)}\int_0^z(\Gamma_e(z')-\Gamma_m(z'))dz' \label{eq:buoyancy_integral}
+\end{equation}
+The lapse rate of the entraining environment, $\Gamma_e$, can be derived from the conservation of entraining moist static energy following Eq.~(B18) in \cite{romps2016}. This yields:
+\begin{equation}
+\Gamma_e = \frac{g}{c_p} + \frac{L_v}{c_p(1+a)}\frac{dq_s}{dz} \label{eq:gamma_e}
+\end{equation}
+where $a$ is a dimensionless entrainment parameter. Here, we use $a=0.2$ following \cite{romps2016}. The difference between the environmental and parcel lapse rates is therefore directly proportional to the vertical moisture gradient:
+\begin{equation}
+\Gamma_e(z')-\Gamma_m(z')=\left(\frac{1}{1+a}-1\right)\frac{L_v}{c_p}\frac{dq_s}{dz}=-\frac{a}{1+a}\frac{L_v}{c_p}\frac{dq_s}{dz} \label{eq:gamma_diff}
+\end{equation}
+Substituting Eq.~(\ref{eq:gamma_diff}) into Eq.~(\ref{eq:buoyancy_integral}) shows that the same physical mechanism used to explain the non-monotonicity in moist adiabatic warming applies for buoyancy:
+\begin{equation}
+B(z)=-\frac{g}{T_e(z)}\left(\frac{a}{1+a}\frac{L_v}{c_p}\right)\int_0^z\frac{dq_s}{dz'}dz' \label{eq:buoyancy_final}
+\end{equation}
+This shows that buoyancy is directly proportional to the vertical integral of the moisture gradient, $dq_s/dz$. Since $dq_s/dz$ is composed of the competing Cooling and Pressure terms, it follows that buoyancy is governed by the same mechanism.
+
+Numerical calculations confirm this expectation. The results show that buoyancy at a fixed height first increases and then decreases as the $T_s$ increases (Fig.~\ref{fig:fig-5}). Decomposing the total buoyancy into the two components reveals the source of this behavior (Fig.~\ref{fig:fig-6}). The total buoyancy, $B_{\text{total}}$, is the sum of the contributions from the Cooling Term ($B_{\text{cool}}$) and the Pressure Term ($B_{\text{pres}}$):
+\begin{align}
+B_{\text{cool}}(z) &= -\frac{g}{T_e(z)} \left( \frac{a}{1+a} \frac{L_v}{c_p} \right) \int_0^z \left(-\Gamma_m \frac{\partial q_s}{\partial T}\right) dz' \label{eq:b_cool} \\
+B_{\text{pres}}(z) &= -\frac{g}{T_e(z)} \left( \frac{a}{1+a} \frac{L_v}{c_p} \right) \int_0^z \left(-\rho g \frac{\partial q_s}{\partial p}\right) dz' \label{eq:b_pres} \\
+B_{\text{total}}(z) &= B_{\text{cool}}(z) + B_{\text{pres}}(z) \label{eq:b_total}
+\end{align}
+The Cooling Term provides a positive buoyancy contribution that increases monotonically with surface temperature, while the Pressure Term provides a negative buoyancy contribution that also grows in magnitude. The sum of these two opposing effects produces the non-monotonic behavior of buoyancy.
+
+This non-monotonic behavior of buoyancy extends to the strength of the convective updraft. We model the updraft's specific kinetic energy, $\frac{1}{2}w^2$, using Eq.~(1) from \cite{delgenio2007}:
+\begin{equation}
+\frac{d}{dz}\left(\frac{1}{2}w^2\right)=a'B(z)-(1+b')\epsilon(z)w^2 \label{eq:momentum}
+\end{equation}
+where $a'$ and $b'$ are dimensionless constants. We use $a'=1/6$ and $b'=2/3$ following \cite{delgenio2007}. $\epsilon(z)$ is the fractional entrainment rate, which is calculated following Eq.~(3) in \cite{romps2016} with precipitation efficiency $PE=0.35$. Since $w(z)$ is determined by the integral of the net force, which includes buoyancy, we expect the non-monotonic dependence on $T_s$ extends to the vertical velocity profile as well.
+
+Numerically integrating Eq.~(\ref{eq:momentum}) confirms this expectation (Fig.~\ref{fig:fig-7}). The resulting vertical velocity profiles exhibit a clear non-monotonic dependence on $T_s$. Because Eq.~(\ref{eq:momentum}) is non-linear, the contributions from the two buoyancy terms are not simply additive. We therefore isolate the influence of each term by first calculating the velocity driven by the Cooling Term's positive buoyancy alone ($w_{\text{cool}}$), and then calculating the effect of the Pressure Term ($w_{\text{pres}}$) as the residual required to recover the total velocity ($w_{\text{total}}$):
+\begin{align}
+\frac{d}{dz}\left(\frac{1}{2}w_{\text{cool}}^2\right)&=a'B_{\text{cool}}(z)-(1+b')\epsilon(z)w_{\text{cool}}^2 \label{eq:w_cool} \\
+w_{\text{pres}}(z)&=w_{\text{total}}(z)-w_{\text{cool}}(z) \label{eq:w_pres}
+\end{align}
+This decomposition (Fig.~\ref{fig:fig-8}) shows that the monotonically increasing velocity from the Cooling Term is counteracted by an increasingly strong opposing effect from the Pressure Term, resulting in the non-monotonic total response.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=\textwidth]{fig-5.png}\\
+ \caption{(a) Vertical profiles of buoyancy for an undiluted parcel ascending through an environment set by an entraining plume, calculated for several surface temperatures. (b) Buoyancy at fixed heights as a function of surface temperature. The entraining environmental profile follows \cite{romps2016}.}\label{fig:fig-5}
+\end{figure}
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=\textwidth]{fig-6.png}\\
+ \caption{The total buoyancy from Fig.~\ref{fig:fig-5} is decomposed into contributions from the Cooling and Pressure terms. (a,b) The contribution to buoyancy from the Cooling Term, which provides a positive, monotonically increasing forcing. (c,d) The contribution from the Pressure Term, which provides a negative (suppressing) forcing that grows in magnitude with temperature.}\label{fig:fig-6}
+\end{figure}
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=\textwidth]{fig-7.png}\\
+ \caption{(a) Vertical profiles of updraft velocity, calculated by numerically integrating Eq.~(\ref{eq:momentum}) using the total buoyancy from Fig.~\ref{fig:fig-5}. (b) Updraft velocity at fixed heights as a function of surface temperature. The velocity exhibits a clear non-monotonic dependence on surface temperature, consistent with the behavior of buoyancy.}\label{fig:fig-7}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=\textwidth]{fig-8.png}\\
+ \caption{The total vertical velocity is decomposed to show the influence of the Cooling and Pressure terms. (a,b) The velocity profile resulting from the positive buoyancy of the Cooling Term alone. (c,d) The effect of the Pressure Term on velocity, calculated as the residual between the total velocity and the velocity from the Cooling Term.}\label{fig:fig-8}
+\end{figure}
+
+
+\section{Summary and Discussion}
+
+This paper presents a thermodynamic explanation for the non-monotonicity of moist adiabat warming. The non-monotonicity arises through the competing influences of a Cooling Term and a Pressure Term on the sensitivity of the moist adiabatic lapse rate. While both terms are proportional to the saturation specific humidity ($q_s$), which increases nearly exponentially with temperature, they are modulated by prefactors with different inverse temperature dependencies. The Cooling Term is proportional to $q_s/T^2$, while the Pressure Term is proportional to $q_s/T$. The non-monotonic response arises because the stronger $1/T^2$ dependence of the Cooling Term's prefactor causes its influence to weaken relative to that of the Pressure Term as the climate warms, leading to a crossover in their relative sensitivity to surface warming. The same mechanism for lapse rate sensitivity cascades to explain the non-monotonic behavior of convective buoyancy and vertical velocity as a function of $T_s$.
+
+Our findings on buoyancy complement the work of \cite{romps2016}, who first explained the non-monotonicity of CAPE. The two studies offer different but complementary insights. \cite{romps2016} focused on explaining the non-monotonicity of buoyancy at the tropopause as a proxy for CAPE. Here, we focus on explaining the non-monotonicity of buoyancy at any fixed height. We also provide a different perspective on the source of non-monotonicity that arises from the competition in the sensitivity of a Cooling Term that favors condensation and a Pressure Term, driven by decreasing ambient pressure, that opposes it.
+
+The non-monotonicity of moist adiabatic warming may have additional implications for climate, such as the organization of convection and the large-scale circulation response to warming. The non-monotonicity of moist adiabatic warming would drive a non-monotonic change in the meridional and zonal temperature gradients. This could serve as a thermodynamically driven hypothesis for understanding state dependence in the response of Hadley and Walker Cells to warming.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACKNOWLEDGMENTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\acknowledgments
+I thank Andrew Williams, Jiawei Bao, Jonah Bloch-Johnson, Martin Singh, and Stephen Po-Chedley for helpful discussions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DATA AVAILABILITY STATEMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+%
+\datastatement
+All scripts used for analysis and plots in this paper are available at \url{https://github.com/omiyawaki/miyawaki-2025-nonmonotonic-moist-adiabat}. They will also be archived on Zenodo upon publication.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APPENDIXES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix[A] 
+
+\appendixtitle{Calculation of Moist Adiabatic Profiles}
+
+The moist adiabatic profiles are calculated numerically by assuming that moist static energy (MSE) is conserved, where:
+\begin{equation}
+\text{MSE}=c_p T+gz+L_v q_s \label{eq:mse_appendix}
+\end{equation}
+Here, $T$ is temperature, $z$ is height, $p$ is pressure, $q_s$ is the saturation specific humidity, $g$ is the acceleration due to gravity, $c_p$ is the specific heat of dry air at constant pressure, and $L_v$ is the latent heat of vaporization. All thermodynamic constants are defined in Table~\ref{tab:tableA1}. Saturation vapor pressure is calculated using Eq.~(10) in \cite{bolton1980}.
+
+The calculation proceeds in discrete vertical steps of $\Delta z$ (100 m). For a given surface temperature ($T_s$) and surface pressure ($p_s$), MSE is calculated at the surface ($z=0$) and is held constant over height. At each subsequent height step $z_{i+1}$, the pressure $p_{i+1}$ is first calculated using hydrostatic balance. Then, a numerical root-finding algorithm (scipy.optimize.root\_scalar with the Brentq method) is used to find the temperature $T_{i+1}$ that satisfies the condition that the MSE at ($T_{i+1}, p_{i+1}, z_{i+1}$) is equal to the surface MSE.
+
+To demonstrate that the non-monotonic warming is independent of the vertical coordinate, the results are also presented in pressure coordinates (Fig.~\ref{fig:fig-a1}). These profiles are obtained by interpolating the temperature profiles for the base and perturbed climates onto a common pressure grid. The warming profile in pressure coordinates, $\Delta T(p)$, is the difference between these two interpolated temperature profiles.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=\textwidth]{fig-a1.png}
+ \caption{The moist adiabatic warming response to a 4 K surface warming in pressure coordinates. (a) Vertical profiles of the temperature response ($\Delta T$) as a function of pressure for surface temperatures ($T_s$) of 280, 290, 300, 310, and 320 K. (b) The warming ($\Delta T$) at fixed pressure levels of 500, 400, 300, and 200 hPa as a function of $T_s$. The non-monotonic behavior seen in height coordinates (Fig.~\ref{fig:fig-1}c) is also evident in pressure coordinates.}\label{fig:fig-a1}
+\end{figure}
+
+
+\begin{table}[htbp]
+\caption{Thermodynamic constants used in the calculation of moist adiabatic profiles.}\label{tab:tableA1}
+\begin{center}
+\begin{tabular}{llcl}
+\topline
+Symbol & Description & Value & Units\\
+\midline
+$g$ & Acceleration due to gravity & 9.81 & m s$^{-2}$ \\
+$c_p$ & Specific heat of dry air & 1005.7 & J kg$^{-1}$ K$^{-1}$ \\
+$R_d$ & Gas constant for dry air & 287.05 & J kg$^{-1}$ K$^{-1}$ \\
+$R_v$ & Gas constant for water vapor & 461.5 & J kg$^{-1}$ K$^{-1}$ \\
+$\epsilon$ & Ratio of gas constants ($R_d/R_v$) & 0.622 & dimensionless \\
+$p_s$ & Reference surface pressure & 100,000 & Pa \\
+$L_v$ & Latent heat of vaporization & $2.501 \times 10^6$ & J kg$^{-1}$ \\
+\botline
+\end{tabular}
+\end{center}
+\end{table}
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This shows how to enter the commands for making a bibliography using
+% BibTeX. It uses references.bib and the ametsocV6.bst file for the style.
+
+\bibliographystyle{ametsocV6}
+\bibliography{references}
+
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END OF AMSPAPERV6.1.TEX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
