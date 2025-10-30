@@ -27,3 +27,8 @@ response_to_reviewers.fls
 response_to_reviewers.log
 response_to_reviewers.out
 .gitignore
+diff.aux
+diff.fls
+diff.log
+diff.synctex.gz
+diff.fdb_latexmk
