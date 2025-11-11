@@ -1,0 +1,128 @@
+\begin{thebibliography}{39}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\renewcommand{\UrlFont}{\rmfamily}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{https://doi.org/\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{https://doi.org/\discretionary{}{}{}\begingroup \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{Alduchov and Eskridge(1996)Alduchov, and Eskridge}]{alduchov1996}
+Alduchov, O.~A., and R.~Eskridge, 1996: Improved magnus form approximation of saturation vapor pressure. \textit{Journal of Applied Meteorology}, \textbf{35~(4)}, 601--609.
+
+\bibitem[{Arakawa and Schubert(1974)Arakawa, and Schubert}]{arakawa1974}
+Arakawa, A., and W.~H. Schubert, 1974: Interaction of a cumulus cloud ensemble with the large-scale environment, part {I}. \textit{Journal of the Atmospheric Sciences}, \textbf{31~(3)}, 674--701.
+
+\bibitem[{Bao et~al.(2022)Bao, Dixit,, and Sherwood}]{bao2022}
+Bao, J., V.~Dixit, and S.~C. Sherwood, 2022: Zonal temperature gradients in the tropical free troposphere. \textit{Journal of climate}.
+
+\bibitem[{Bolton(1980)}]{bolton1980}
+Bolton, D., 1980: The computation of equivalent potential temperature. \textit{Mon. Weather Rev.}, \textbf{108~(7)}, 1046--1053.
+
+\bibitem[{Buck(1981)}]{buck1981}
+Buck, A.~L., 1981: New equations for computing vapor pressure and enhancement factor. \textit{Journal of Applied Meteorology and Climatology}, \textbf{20~(12)}, 1527--1532.
+
+\bibitem[{Byrne and O'Gorman(2013)Byrne, and O'Gorman}]{byrne2013}
+Byrne, M.~P., and P.~A. O'Gorman, 2013: Land–ocean warming contrast over a wide range of climates: Convective quasi-equilibrium theory and idealized simulations. \textit{Journal of climate}, \textbf{26~(12)}, 4000--4016.
+
+\bibitem[{Del~Genio et~al.(2007)Del~Genio, Yao,, and Jonas}]{delgenio2007}
+Del~Genio, A.~D., M.-S. Yao, and J.~Jonas, 2007: Will moist convection be stronger in a warmer climate?: {CONVECTION} {STRENGTH} {IN} a {WARMER} {CLIMATE}. \textit{Geophys. Res. Lett.}, \textbf{34~(16)}.
+
+\bibitem[{{ECMWF}(2022)}]{ecmwf2022}
+{ECMWF}, 2022: {IFS} documentation. Accessed: 2025-10-28, \url{https://www.ecmwf.int/en/publications/ifs-documentation}.
+
+\bibitem[{Emanuel(1994)}]{emanuel1994}
+Emanuel, K.~A., 1994: \textit{Atmospheric Convection}. Oxford University Press.
+
+\bibitem[{Flannaghan et~al.(2014)Flannaghan, Fueglistaler, Held, Po‐Chedley, Wyman,, and Zhao}]{flannaghan2014}
+Flannaghan, T.~J., S.~Fueglistaler, I.~M. Held, S.~Po‐Chedley, B.~Wyman, and M.~Zhao, 2014: Tropical temperature trends in atmospheric general circulation model simulations and the impact of uncertainties in observed {SSTs}. \textit{Journal of Geophysical Research, D: Atmospheres}, \textbf{119~(23)}, 13,327--13,337.
+
+\bibitem[{Hansen et~al.(1984)Hansen, Lacis, Rind, Russell, Stone, Fung, Ruedy,, and Lerner}]{hansen1984}
+Hansen, J., A.~Lacis, D.~Rind, G.~Russell, P.~Stone, I.~Fung, R.~Ruedy, and J.~Lerner, 1984: Climate sensitivity: Analysis of feedback mechanisms. \textit{Climate Processes and Climate Sensitivity}, American Geophysical Union (AGU), 130--163.
+
+\bibitem[{Held(1982)}]{held1982}
+Held, I.~M., 1982: On the height of the tropopause and the static stability of the troposphere. \textit{Journal of the Atmospheric Sciences}, \textbf{39~(2)}, 412--417.
+
+\bibitem[{Held(1993)}]{held1993}
+Held, I.~M., 1993: Large-scale dynamics and global warming. \textit{Bull. Am. Meteorol. Soc.}, \textbf{74~(2)}, 228--242.
+
+\bibitem[{Held and Shell(2012)Held, and Shell}]{held2012}
+Held, I.~M., and K.~M. Shell, 2012: Using relative humidity as a state variable in climate feedback analysis. \textit{Journal of climate}, \textbf{25~(8)}, 2578--2582.
+
+\bibitem[{Held and Soden(2000)Held, and Soden}]{held2000a}
+Held, I.~M., and B.~J. Soden, 2000: Water vapor feedback and global warming. \textit{Annual review of energy and the environment}, \textbf{25~(1)}, 441--475.
+
+\bibitem[{Hu and Vallis(2019)Hu, and Vallis}]{hu2019a}
+Hu, S., and G.~K. Vallis, 2019: Meridional structure and future changes of tropopause height and temperature. \textit{Quarterly Journal of the Royal Meteorological Society}, \textbf{145~(723)}, 2698--2717.
+
+\bibitem[{Ingersoll(1969)}]{ingersoll1969}
+Ingersoll, A.~P., 1969: The runaway greenhouse: A history of water on venus. \textit{Journal of the atmospheric sciences}, \textbf{26~(6)}, 1191--1198.
+
+\bibitem[{Kasting(1988)}]{kasting1988}
+Kasting, J., 1988: Runaway and moist greenhouse atmospheres and the evolution of earth and venus. \textit{Icarus}, \textbf{74}, 472--494.
+
+\bibitem[{Keil et~al.(2021)Keil, Schmidt, Stevens,, and Bao}]{keil2021}
+Keil, P., H.~Schmidt, B.~Stevens, and J.~Bao, 2021: Variations of tropical lapse rates in climate models and their implications for upper tropospheric warming. \textit{Journal of climate}, \textbf{34~(24)}, 1--50.
+
+\bibitem[{Komabayasi(1967)}]{komabayasi1967}
+Komabayasi, M., 1967: Discrete equilibrium temperatures of a hypothetical planet with the atmosphere and the hydrosphere of one component-two phase system under constant solar radiation. \textit{Journal of the Meteorological Society of Japan}, \textbf{45~(1)}, 137--139.
+
+\bibitem[{Levine and Boos(2016)Levine, and Boos}]{levine2016}
+Levine, X.~J., and W.~R. Boos, 2016: A mechanism for the response of the zonally asymmetric subtropical hydrologic cycle to global warming. \textit{J. Clim.}, \textbf{29~(21)}, 7851--7867.
+
+\bibitem[{List(1949)}]{list1949}
+List, R.~J., 1949: Smithsonian meteorological tables. \textit{Smithsonian miscellaneous collections}, \textbf{114}, 1--521.
+
+\bibitem[{Manabe and Wetherald(1967)Manabe, and Wetherald}]{manabe1967}
+Manabe, S., and R.~T. Wetherald, 1967: Thermal equilibrium of the atmosphere with a given distribution of relative humidity. \textit{J. Atmos. Sci.}, \textbf{24~(3)}, 241--259.
+
+\bibitem[{Miyawaki et~al.(2020)Miyawaki, Tan, Shaw,, and Jansen}]{miyawaki2020}
+Miyawaki, O., Z.~Tan, T.~A. Shaw, and M.~F. Jansen, 2020: Quantifying key mechanisms that contribute to the deviation of the tropical warming profile from a moist adiabat. \textit{Geophys. Res. Lett.}, \textbf{47~(20)}, e2020GL089\,136.
+
+\bibitem[{Murphy and Koop(2005)Murphy, and Koop}]{murphy2005}
+Murphy, D.~M., and T.~Koop, 2005: Review of the vapour pressures of ice and supercooled water for atmospheric applications. \textit{Quarterly journal of the Royal Meteorological Society. Royal Meteorological Society (Great Britain)}, \textbf{131~(608)}, 1539--1565.
+
+\bibitem[{Neelin and Held(1987)Neelin, and Held}]{neelin1987}
+Neelin, J.~D., and I.~M. Held, 1987: Modeling tropical convergence based on the moist static energy budget. \textit{Mon. Weather Rev.}, \textbf{115~(1)}, 3--12.
+
+\bibitem[{O'Gorman(2015)}]{oGorman2015}
+O'Gorman, P.~A., 2015: Precipitation extremes under climate change. \textit{Current climate change reports}, \textbf{1~(2)}, 49--59.
+
+\bibitem[{Riehl and Malkus(1958)Riehl, and Malkus}]{riehl1958}
+Riehl, H., and J.~S. Malkus, 1958: On the heat balance of the equatorial trough zone. \textit{Geophysica}, \textbf{6~(3-4)}.
+
+\bibitem[{Romps(2016)}]{romps2016}
+Romps, D.~M., 2016: {Clausius–Clapeyron} scaling of {CAPE} from analytical solutions to {RCE}. \textit{J. Atmos. Sci.}, \textbf{73~(9)}, 3719--3737.
+
+\bibitem[{Santer et~al.(2005)}]{santer2005}
+Santer, B.~D., and Coauthors, 2005: Amplification of surface temperature trends and variability in the tropical atmosphere. \textit{Science}, \textbf{309~(5740)}, 1551--1556.
+
+\bibitem[{Seeley and Romps(2015)Seeley, and Romps}]{seeley2015a}
+Seeley, J.~T., and D.~M. Romps, 2015: Why does tropical convective available potential energy ({CAPE}) increase with warming? \textit{Geophysical research letters}, \textbf{42~(23)}, 10,429--10,437.
+
+\bibitem[{Seeley and Romps(2016)Seeley, and Romps}]{seeley2016}
+Seeley, J.~T., and D.~M. Romps, 2016: Tropical cloud buoyancy is the same in a world with or without ice. \textit{Geophysical research letters}, \textbf{43~(7)}, 3572--3579.
+
+\bibitem[{Shaw and Miyawaki(2025)Shaw, and Miyawaki}]{shaw2025a}
+Shaw, T.~A., and O.~Miyawaki, 2025: Moist adiabatic scaling explains mean and fast upper‐level jet stream wind response to climate change. \textit{Geophysical research letters}, \textbf{52~(20)}, e2025GL118\,315.
+
+\bibitem[{Shaw and Voigt(2016)Shaw, and Voigt}]{shaw2016b}
+Shaw, T.~A., and A.~Voigt, 2016: What can moist thermodynamics tell us about circulation shifts in response to uniform warming? \textit{Geophysical research letters}, \textbf{43~(9)}, 4566--4575.
+
+\bibitem[{Singh and O'Gorman(2013)Singh, and O'Gorman}]{singh2013}
+Singh, M.~S., and P.~A. O'Gorman, 2013: Influence of entrainment on the thermal stratification in simulations of radiative‐convective equilibrium. \textit{Geophysical research letters}, \textbf{40~(16)}, 4398--4403.
+
+\bibitem[{Singh and O'Gorman(2015)Singh, and O'Gorman}]{singh2015}
+Singh, M.~S., and P.~A. O'Gorman, 2015: Increases in moist‐convective updraught velocities with warming in radiative‐convective equilibrium. \textit{Quarterly Journal of the Royal Meteorological Society}, \textbf{141~(692)}, 2828--2838.
+
+\bibitem[{Vallis et~al.(2015)Vallis, Zurita‐Gotor, Cairns,, and Kidston}]{vallis2015}
+Vallis, G.~K., P.~Zurita‐Gotor, C.~Cairns, and J.~Kidston, 2015: Response of the large-scale structure of the atmosphere to global warming. \textit{Quart. J. Roy. Meteor. Soc.}, \textbf{141~(690)}, 1479--1501.
+
+\bibitem[{Wing et~al.(2018)Wing, Reed, Satoh, Stevens, Bony,, and Ohno}]{wing2018}
+Wing, A.~A., K.~A. Reed, M.~Satoh, B.~Stevens, S.~Bony, and T.~Ohno, 2018: Radiative–convective equilibrium model intercomparison project. \textit{Geoscientific Model Development}, \textbf{11~(2)}, 793--813.
+
+\bibitem[{Wordsworth and Pierrehumbert(2013)Wordsworth, and Pierrehumbert}]{wordsworth2013}
+Wordsworth, R.~D., and R.~T. Pierrehumbert, 2013: {WATER} {LOSS} {FROM} {TERRESTRIAL} {PLANETS} {WITH} {CO2}-{RICH} {ATMOSPHERES}. \textit{The Astrophysical Journal}, \textbf{778~(2)}, 154.
+
+\end{thebibliography}
